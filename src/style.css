@@ -130,10 +130,13 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Schermelementen verbergen */
   .masthead__lang { display: none; }
 
-  /* Eén doorlopende kolom: de inhoud sluit direct aan op de header en
-     breekt netjes over pagina's (CSS-grid fragmenteert niet betrouwbaar). */
+  /* Twee kolommen zoals op het scherm, maar met floats i.p.v. grid:
+     floats behouden de linker/rechter-indeling én breken door over pagina's
+     (CSS-grid fragmenteert niet betrouwbaar bij afdrukken). */
   .sheet__main { display: block; }
-  .col--side { background: transparent; border-left: none; padding-top: 0; }
+  .sheet__main::after { content: ""; display: table; clear: both; }
+  .col--main { float: left; width: 64%; }
+  .col--side { float: right; width: 35%; }
 
   /* Marges via padding (zoals op het scherm) */
   .masthead__inner { padding: 12mm var(--sheet-pad); }
