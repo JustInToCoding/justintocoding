@@ -4,3 +4,5 @@ dist/
 public/photo.webp
 public/photo.jpg
 assets/photo-original.jpg
+.playwright-mcp/
+cv-screen.png
