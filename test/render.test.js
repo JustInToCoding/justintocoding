@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { escapeHtml, t } from '../src/render.js';
+import { escapeHtml, t, handle } from '../src/render.js';
 import {
   renderProfile, renderExperience, renderSkills,
   renderProjects, renderLanguages, renderHobbies,
@@ -158,6 +158,22 @@ describe('renderHeader', () => {
     expect(renderHeader(data.meta, 'nl')).toContain('href="/en/"');
     expect(renderHeader(data.meta, 'en')).toContain('href="/"');
   });
+  it('toont GitHub/LinkedIn als handle met icoon i.p.v. generiek label', () => {
+    const html = renderHeader(data.meta, 'nl');
+    expect(html).toContain('<span>jane</span>'); // afgeleide handle
+    expect(html).toContain('class="ico"'); // icoon aanwezig
+    expect(html).not.toContain('>GitHub<');
+    expect(html).not.toContain('>LinkedIn<');
+  });
+});
+
+describe('handle', () => {
+  it('leidt de GitHub-handle af', () => {
+    expect(handle('https://github.com/JustInToCoding')).toBe('JustInToCoding');
+  });
+  it('leidt de LinkedIn-handle af (zonder /in/)', () => {
+    expect(handle('https://www.linkedin.com/in/justinsteenhuis')).toBe('justinsteenhuis');
+  });
 });
 
 describe('renderHead', () => {
@@ -168,6 +184,7 @@ describe('renderHead', () => {
     expect(html).toContain('hreflang="nl"');
     expect(html).toContain('hreflang="en"');
     expect(html).toContain('"@type": "Person"');
+    expect(html).toContain('rel="icon"');
   });
   it('kapt de meta-description af op een woordgrens met ellipsis', () => {
     const longData = { ...data, profile: { nl: 'woord '.repeat(60), en: 'word '.repeat(60) } };

@@ -150,6 +150,23 @@ export function renderHobbies(hobbies, locale) {
   </section>`;
 }
 
+// Kleine inline SVG-iconen (erven kleur via currentColor); printen mee.
+const ICONS = {
+  email: '<svg class="ico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" fill="currentColor"><path d="M2 3h12a1 1 0 0 1 1 1v.4l-7 4.2-7-4.2V4a1 1 0 0 1 1-1zm-1 3.27V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6.27l-6.49 3.9a1 1 0 0 1-1.02 0L1 6.27z"/></svg>',
+  github: '<svg class="ico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
+  linkedin: '<svg class="ico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" fill="currentColor"><path d="M13.63 13.63h-2.37V9.9c0-.89-.02-2.03-1.24-2.03-1.24 0-1.43.97-1.43 1.97v3.79H6.22V6h2.28v1.04h.03c.32-.6 1.09-1.24 2.25-1.24 2.4 0 2.85 1.58 2.85 3.64v4.19zM3.56 4.96a1.38 1.38 0 1 1 0-2.76 1.38 1.38 0 0 1 0 2.76zM4.75 13.63H2.37V6h2.38v7.63zM14.82 0H1.18C.53 0 0 .52 0 1.16v13.68C0 15.48.53 16 1.18 16h13.64c.65 0 1.18-.52 1.18-1.16V1.16C16 .52 15.47 0 14.82 0z"/></svg>'
+};
+
+// Leidt een leesbare handle af uit een profiel-URL (github.com/JustInToCoding -> JustInToCoding).
+export function handle(url) {
+  try {
+    const parts = new URL(url).pathname.split('/').filter(Boolean).filter((p) => p !== 'in');
+    return parts[parts.length - 1] || new URL(url).hostname;
+  } catch {
+    return url;
+  }
+}
+
 export function renderHeader(meta, locale) {
   const switchHref = locale === 'nl' ? '/en/' : '/';
   return `<header class="masthead">
@@ -163,9 +180,9 @@ export function renderHeader(meta, locale) {
         <h1 class="masthead__name">${escapeHtml(meta.name)}</h1>
         <p class="masthead__title">${escapeHtml(t(meta.title, locale))}</p>
         <ul class="masthead__contact">
-          <li><a href="${escapeHtml(safeUrl('mailto:' + meta.email))}">${escapeHtml(meta.email)}</a></li>
-          <li><a href="${escapeHtml(safeUrl(meta.github))}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="${escapeHtml(safeUrl(meta.linkedin))}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="${escapeHtml(safeUrl('mailto:' + meta.email))}">${ICONS.email}<span>${escapeHtml(meta.email)}</span></a></li>
+          <li><a href="${escapeHtml(safeUrl(meta.github))}" target="_blank" rel="noopener noreferrer">${ICONS.github}<span>${escapeHtml(handle(meta.github))}</span></a></li>
+          <li><a href="${escapeHtml(safeUrl(meta.linkedin))}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}<span>${escapeHtml(handle(meta.linkedin))}</span></a></li>
         </ul>
       </div>
       <a class="masthead__lang" href="${switchHref}"
@@ -221,6 +238,8 @@ export function renderHead(data, locale) {
   };
   return `<title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#0f766e" />
   <link rel="canonical" href="${escapeHtml(canonical)}" />
   <link rel="alternate" hreflang="nl" href="${escapeHtml(nlUrl)}" />
   <link rel="alternate" hreflang="en" href="${escapeHtml(enUrl)}" />

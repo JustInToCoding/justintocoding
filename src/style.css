@@ -44,9 +44,10 @@ body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min
 }
 .masthead__name { margin: 0; font-size: 24pt; font-weight: 700; letter-spacing: -.5px; }
 .masthead__title { margin: 2px 0 10px; font-size: 12pt; opacity: .92; }
-.masthead__contact { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 9.5pt; }
-.masthead__contact a { color: #fff; text-decoration: none; }
-.masthead__contact a:hover, .masthead__contact a:focus { text-decoration: underline; }
+.masthead__contact { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 9.5pt; }
+.masthead__contact a { color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+.masthead__contact a:hover span, .masthead__contact a:focus span { text-decoration: underline; }
+.masthead__contact .ico { flex: 0 0 auto; }
 .masthead__lang {
   position: absolute; top: 10px; right: var(--sheet-pad);
   color: #fff; border: 1px solid rgba(255,255,255,.6); border-radius: 4px;
@@ -115,9 +116,10 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
 }
 
 @media print {
+  html, body { margin: 0; padding: 0; }
   body { background: #fff; font-size: 10pt; }
 
-  /* Vel vult de pagina, geen schaduw/marge/achtergrond van het scherm */
+  /* Vel vult de pagina volledig (full-bleed): geen schaduw, geen zijmarges */
   body > header,
   body > main {
     width: auto; margin: 0; box-shadow: none;
@@ -129,15 +131,20 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Schermelementen verbergen */
   .masthead__lang { display: none; }
 
-  /* Marges via padding zodat de kleurband tot de rand loopt */
-  .masthead__inner { padding: 12mm var(--sheet-pad); }
-  .col { padding-top: 8mm; padding-bottom: 8mm; }
+  /* Eén doorlopende kolom: de inhoud sluit direct aan op de header en
+     breekt netjes over pagina's (CSS-grid fragmenteert niet betrouwbaar). */
+  .sheet__main { display: block; }
+  .col--side { background: transparent; border-left: none; padding-top: 0; }
 
-  /* Items niet over paginagrens breken */
-  .entry, .skills__group, .lang, .cert, .section__title { break-inside: avoid; }
-  .section { break-inside: auto; }
+  /* Smalle, gelijke zijranden zodat header en tekst uitlijnen zonder brede witte balken */
+  .masthead__inner { padding: 10mm 8mm; }
+  .col { padding: 6mm 8mm; }
+
+  /* Rollen/items niet over de paginagrens breken; bedrijfskop bij eerste rol houden */
+  .role, .skills__group, .lang, .cert { break-inside: avoid; }
+  .entry__company { break-after: avoid; }
   .section__title { break-after: avoid; }
 
-  /* Links niet blauw/onderstreept in print, wel leesbaar */
+  /* Links leesbaar (niet blauw/onderstreept); handles + iconen blijven zichtbaar */
   a { color: inherit; text-decoration: none; }
 }

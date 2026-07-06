@@ -138,18 +138,18 @@
       "period": "2011 – 2016"
     },
     {
-      "degree": { "nl": "Informatica — Software Engineering (uitwisseling)", "en": "Computer Science — Software Engineering (exchange)" },
+      "degree": { "nl": "Minor Informatica — Software Engineering (uitwisseling)", "en": "Minor in Computer Science — Software Engineering (exchange)" },
       "institution": "Minnesota State University, Mankato",
       "period": "2014"
     },
     {
-      "degree": { "nl": "Voortgezet onderwijs", "en": "Secondary education" },
+      "degree": { "nl": "HAVO", "en": "HAVO — senior general secondary education" },
       "institution": "Mondial College",
       "period": "2006 – 2011"
     }
   ],
   "skills": [
-    { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["React", "JavaScript", "Data visualisation", "GIS", "Ember.js", "HTML & CSS"] },
+    { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["React", "JavaScript", "Data visualisation", "GIS", "HTML & CSS"] },
     { "group": { "nl": "Backend & Cloud", "en": "Backend & Cloud" }, "items": ["Node.js", "AWS"] },
     { "group": { "nl": "Rollen & aanpak", "en": "Roles & approach" }, "items": ["Solution Architecture", "Product Ownership", "Business Consultancy", "Design Sprints", "Coaching & mentoring"] }
   ],
