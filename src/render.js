@@ -16,6 +16,10 @@ export function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (c) => map[c]);
 }
 
+export function safeUrl(url) {
+  return /^(https?:|mailto:)/i.test(String(url)) ? url : '#';
+}
+
 export function t(value, locale) {
   if (value && typeof value === 'object' && !Array.isArray(value)) {
     if (locale in value) return value[locale];
@@ -86,7 +90,7 @@ export function renderSkills(skills, locale) {
 export function renderProjects(projects, locale) {
   const items = projects.map((p) => `<article class="entry">
       <h3 class="entry__role">
-        <a href="${escapeHtml(p.url)}" rel="noopener">${escapeHtml(p.name)}</a>
+        <a href="${escapeHtml(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.name)}</a>
       </h3>
       <p class="entry__desc">${escapeHtml(t(p.description, locale))}</p>
     </article>`).join('');

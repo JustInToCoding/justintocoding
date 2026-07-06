@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { escapeHtml, t } from '../src/render.js';
 import {
   renderProfile, renderExperience, renderSkills,
-  renderProjects, renderLanguages, renderHobbies
+  renderProjects, renderLanguages, renderHobbies,
+  safeUrl, renderEducation, renderCertifications
 } from '../src/render.js';
 
 describe('escapeHtml', () => {
@@ -46,6 +47,9 @@ describe('renderExperience', () => {
   it('rendert elk item als <article>', () => {
     expect(renderExperience(exp, 'en')).toContain('<article');
   });
+  it('kiest de Engelse teksten bij en-locale', () => {
+    expect(renderExperience(exp, 'en')).toContain('Did &lt;X&gt;');
+  });
 });
 
 describe('renderProfile', () => {
@@ -74,5 +78,33 @@ describe('renderHobbies', () => {
   it('rendert alle hobby-items', () => {
     const html = renderHobbies([{ nl: 'Lezen', en: 'Reading' }], 'en');
     expect(html).toContain('Reading');
+  });
+});
+
+describe('safeUrl', () => {
+  it('laat http(s) en mailto door', () => {
+    expect(safeUrl('https://x.dev')).toBe('https://x.dev');
+    expect(safeUrl('mailto:a@b.nl')).toBe('mailto:a@b.nl');
+  });
+  it('blokkeert javascript: en andere schemes', () => {
+    expect(safeUrl('javascript:alert(1)')).toBe('#');
+  });
+});
+
+describe('renderEducation', () => {
+  it('rendert diploma, instituut en periode', () => {
+    const html = renderEducation([{ degree: { nl: 'HBO', en: 'BSc' }, institution: 'HU', period: '2019 – 2023' }], 'en');
+    expect(html).toContain('BSc');
+    expect(html).toContain('HU');
+    expect(html).toContain('2019 – 2023');
+  });
+});
+
+describe('renderCertifications', () => {
+  it('rendert naam, uitgever en jaar', () => {
+    const html = renderCertifications([{ name: 'AWS', issuer: 'Amazon', year: '2024' }], 'nl');
+    expect(html).toContain('AWS');
+    expect(html).toContain('Amazon');
+    expect(html).toContain('2024');
   });
 });
