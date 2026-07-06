@@ -56,7 +56,7 @@ body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min
 .masthead__lang:hover, .masthead__lang:focus { background: rgba(255,255,255,.15); }
 
 /* Twee kolommen */
-.sheet__main { display: grid; grid-template-columns: 1.9fr 1fr; gap: 0; }
+.sheet__main { display: grid; grid-template-columns: 2.3fr 1fr; gap: 0; }
 .col { padding: 10mm var(--sheet-pad); }
 .col--main { padding-right: 8mm; }
 .col--side { background: #f8fafb; border-left: 1px solid var(--line); }
@@ -133,19 +133,26 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Twee kolommen zoals op het scherm, maar met floats i.p.v. grid:
      floats behouden de linker/rechter-indeling én breken door over pagina's
      (CSS-grid fragmenteert niet betrouwbaar bij afdrukken). */
-  .sheet__main {
-    display: block;
-    /* Faux-kolom: schildert de rechterbalk (lijn + lichte vulling) over de
-       volle hoogte van de container, dus doorlopend over alle pagina's —
-       ook al is de zijbalk-inhoud korter dan de hoofdkolom. */
-    background: linear-gradient(to right,
-      #fff 0 65%,
-      var(--line) 65% calc(65% + 1px),
-      #f8fafb calc(65% + 1px) 100%);
-  }
+  .sheet__main { display: block; }
   .sheet__main::after { content: ""; display: table; clear: both; }
-  .col--main { float: left; width: 64%; }
-  .col--side { float: right; width: 35%; background: transparent; border-left: none; }
+  .col--main { float: left; width: 69%; }
+  .col--side { float: right; width: 30%; background: transparent; border-left: none; }
+
+  /* Rechterbalk over de VOLLEDIGE hoogte van elke pagina (ook onderaan de
+     laatste pagina): een vaste (fixed) achtergrondlaag wordt bij het printen
+     op iedere pagina herhaald, van boven- tot onderrand. `main` mag daarom
+     niet opaak wit zijn, anders dekt het deze laag af. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to right,
+      #fff 0 70%,
+      var(--line) 70% calc(70% + 1px),
+      #f8fafb calc(70% + 1px) 100%);
+  }
+  body > main { background: transparent; }
 
   /* Marges via padding (zoals op het scherm) */
   .masthead__inner { padding: 12mm var(--sheet-pad); }
