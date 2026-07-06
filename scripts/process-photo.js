@@ -3,7 +3,7 @@
 import sharp from 'sharp';
 import { existsSync } from 'node:fs';
 
-const SRC = 'public/photo-src.jpg';
+const SRC = 'assets/photo-src.jpg';
 const SIZE = 320; // ~2x weergavegrootte (140px) voor retina
 
 if (!existsSync(SRC)) {
