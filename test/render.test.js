@@ -151,6 +151,20 @@ describe('renderHead', () => {
     expect(html).toContain('hreflang="en"');
     expect(html).toContain('"@type": "Person"');
   });
+  it('kapt de meta-description af op een woordgrens met ellipsis', () => {
+    const longData = { ...data, profile: { nl: 'woord '.repeat(60), en: 'word '.repeat(60) } };
+    const html = renderHead(longData, 'nl');
+    const m = html.match(/name="description" content="([^"]*)"/);
+    expect(m[1].length).toBeLessThanOrEqual(156);
+    expect(m[1].endsWith('…')).toBe(true);
+    expect(m[1]).not.toMatch(/woor$/); // niet mid-woord afgekapt
+  });
+  it('voorkomt </script>-breakout in de JSON-LD', () => {
+    const evil = { ...data, meta: { ...data.meta, name: 'Jane </script> Doe' } };
+    const html = renderHead(evil, 'nl');
+    expect(html).not.toContain('</script> Doe');
+    expect(html).toContain('\\u003c/script>');
+  });
 });
 
 describe('renderBody', () => {

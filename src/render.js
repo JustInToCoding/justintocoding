@@ -172,10 +172,18 @@ export function renderBody(data, locale) {
   </main>`;
 }
 
+function truncate(str, max) {
+  const chars = Array.from(str);
+  if (chars.length <= max) return str;
+  const cut = chars.slice(0, max).join('');
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + '…';
+}
+
 export function renderHead(data, locale) {
   const { meta, profile } = data;
   const title = `${meta.name} — ${t(meta.title, locale)}`;
-  const description = t(profile, locale).slice(0, 155);
+  const description = truncate(t(profile, locale), 155);
   const base = meta.siteUrl.replace(/\/$/, '');
   const nlUrl = base;
   const enUrl = `${base}/en/`;
@@ -186,7 +194,7 @@ export function renderHead(data, locale) {
     name: meta.name,
     jobTitle: t(meta.title, locale),
     email: `mailto:${meta.email}`,
-    url: base,
+    url: canonical,
     sameAs: [meta.github, meta.linkedin],
     address: { '@type': 'PostalAddress', addressLocality: t(meta.location, locale) }
   };
@@ -201,5 +209,5 @@ export function renderHead(data, locale) {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${escapeHtml(canonical)}" />
   <meta property="og:image" content="${escapeHtml(base)}/photo.jpg" />
-  <script type="application/ld+json">${JSON.stringify(jsonLd, null, 2)}</script>`;
+  <script type="application/ld+json">${JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c')}</script>`;
 }
