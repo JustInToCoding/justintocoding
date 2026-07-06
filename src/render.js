@@ -157,14 +157,10 @@ const ICONS = {
   linkedin: '<svg class="ico" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" fill="currentColor"><path d="M13.63 13.63h-2.37V9.9c0-.89-.02-2.03-1.24-2.03-1.24 0-1.43.97-1.43 1.97v3.79H6.22V6h2.28v1.04h.03c.32-.6 1.09-1.24 2.25-1.24 2.4 0 2.85 1.58 2.85 3.64v4.19zM3.56 4.96a1.38 1.38 0 1 1 0-2.76 1.38 1.38 0 0 1 0 2.76zM4.75 13.63H2.37V6h2.38v7.63zM14.82 0H1.18C.53 0 0 .52 0 1.16v13.68C0 15.48.53 16 1.18 16h13.64c.65 0 1.18-.52 1.18-1.16V1.16C16 .52 15.47 0 14.82 0z"/></svg>'
 };
 
-// Leidt een leesbare handle af uit een profiel-URL (github.com/JustInToCoding -> JustInToCoding).
-export function handle(url) {
-  try {
-    const parts = new URL(url).pathname.split('/').filter(Boolean).filter((p) => p !== 'in');
-    return parts[parts.length - 1] || new URL(url).hostname;
-  } catch {
-    return url;
-  }
+// Volledig uitgeschreven link zonder protocol/www (leesbaar/typebaar op een geprinte CV).
+// bv. "https://github.com/JustInToCoding" -> "github.com/JustInToCoding".
+export function linkLabel(url) {
+  return String(url).replace(/^https?:\/\//i, '').replace(/^www\./i, '').replace(/\/+$/, '');
 }
 
 export function renderHeader(meta, locale) {
@@ -181,8 +177,8 @@ export function renderHeader(meta, locale) {
         <p class="masthead__title">${escapeHtml(t(meta.title, locale))}</p>
         <ul class="masthead__contact">
           <li><a href="${escapeHtml(safeUrl('mailto:' + meta.email))}">${ICONS.email}<span>${escapeHtml(meta.email)}</span></a></li>
-          <li><a href="${escapeHtml(safeUrl(meta.github))}" target="_blank" rel="noopener noreferrer">${ICONS.github}<span>${escapeHtml(handle(meta.github))}</span></a></li>
-          <li><a href="${escapeHtml(safeUrl(meta.linkedin))}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}<span>${escapeHtml(handle(meta.linkedin))}</span></a></li>
+          <li><a href="${escapeHtml(safeUrl(meta.github))}" target="_blank" rel="noopener noreferrer">${ICONS.github}<span>${escapeHtml(linkLabel(meta.github))}</span></a></li>
+          <li><a href="${escapeHtml(safeUrl(meta.linkedin))}" target="_blank" rel="noopener noreferrer">${ICONS.linkedin}<span>${escapeHtml(linkLabel(meta.linkedin))}</span></a></li>
         </ul>
       </div>
       <a class="masthead__lang" href="${switchHref}"

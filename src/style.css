@@ -130,17 +130,6 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Schermelementen verbergen */
   .masthead__lang { display: none; }
 
-  /* Header gegarandeerd leesbaar in print: browsers printen achtergrondkleuren
-     vaak niet, waardoor witte tekst op de teal band onzichtbaar wordt. Daarom
-     in print donkere tekst op wit met teal accenten (naam + links in teal,
-     teal lijn onder de header) — leesbaar ongeacht de printinstelling. */
-  .masthead { background: #fff; color: var(--ink); }
-  .masthead__inner { border-bottom: 2.5pt solid var(--accent); }
-  .masthead__name { color: var(--accent-dark); }
-  .masthead__title { color: var(--ink); opacity: 1; }
-  .masthead__contact a { color: var(--accent-dark); }
-  .masthead__photo img { border-color: var(--accent); }
-
   /* Twee kolommen zoals op het scherm, maar met floats i.p.v. grid:
      floats behouden de linker/rechter-indeling én breken door over pagina's
      (CSS-grid fragmenteert niet betrouwbaar bij afdrukken). */
