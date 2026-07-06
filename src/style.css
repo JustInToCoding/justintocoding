@@ -56,7 +56,7 @@ body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min
 .masthead__lang:hover, .masthead__lang:focus { background: rgba(255,255,255,.15); }
 
 /* Twee kolommen */
-.sheet__main { display: grid; grid-template-columns: 2.3fr 1fr; gap: 0; }
+.sheet__main { display: grid; grid-template-columns: 1.9fr 1fr; gap: 0; }
 .col { padding: 10mm var(--sheet-pad); }
 .col--main { padding-right: 8mm; }
 .col--side { background: #f8fafb; border-left: 1px solid var(--line); }
@@ -130,6 +130,17 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Schermelementen verbergen */
   .masthead__lang { display: none; }
 
+  /* Header gegarandeerd leesbaar in print: browsers printen achtergrondkleuren
+     vaak niet, waardoor witte tekst op de teal band onzichtbaar wordt. Daarom
+     in print donkere tekst op wit met teal accenten (naam + links in teal,
+     teal lijn onder de header) — leesbaar ongeacht de printinstelling. */
+  .masthead { background: #fff; color: var(--ink); }
+  .masthead__inner { border-bottom: 2.5pt solid var(--accent); }
+  .masthead__name { color: var(--accent-dark); }
+  .masthead__title { color: var(--ink); opacity: 1; }
+  .masthead__contact a { color: var(--accent-dark); }
+  .masthead__photo img { border-color: var(--accent); }
+
   /* Twee kolommen zoals op het scherm, maar met floats i.p.v. grid:
      floats behouden de linker/rechter-indeling én breken door over pagina's
      (CSS-grid fragmenteert niet betrouwbaar bij afdrukken). */
@@ -139,13 +150,13 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
        volle hoogte van de container, dus doorlopend over alle pagina's —
        ook al is de zijbalk-inhoud korter dan de hoofdkolom. */
     background: linear-gradient(to right,
-      #fff 0 70%,
-      var(--line) 70% calc(70% + 1px),
-      #f8fafb calc(70% + 1px) 100%);
+      #fff 0 65%,
+      var(--line) 65% calc(65% + 1px),
+      #f8fafb calc(65% + 1px) 100%);
   }
   .sheet__main::after { content: ""; display: table; clear: both; }
-  .col--main { float: left; width: 69%; }
-  .col--side { float: right; width: 30%; background: transparent; border-left: none; }
+  .col--main { float: left; width: 64%; }
+  .col--side { float: right; width: 35%; background: transparent; border-left: none; }
 
   /* Marges via padding (zoals op het scherm) */
   .masthead__inner { padding: 12mm var(--sheet-pad); }
