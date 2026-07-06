@@ -180,8 +180,8 @@ export function renderHeader(meta, locale) {
   return `<header class="masthead">
     <div class="masthead__inner">
       <picture class="masthead__photo">
-        <source srcset="${base}photo.webp" type="image/webp" />
-        <img src="${base}photo.jpg" width="140" height="140"
+        <source srcset="/photo.webp" type="image/webp" />
+        <img src="/photo.jpg" width="140" height="140"
              alt="${escapeHtml(t(meta.photoAlt, locale))}" loading="eager" decoding="async" />
       </picture>
       <div class="masthead__intro">
@@ -232,7 +232,6 @@ export function renderHead(data, locale) {
   // Eigen, afgeronde beschrijving; valt terug op het profiel. Ruime limiet als vangnet.
   const description = truncate(t(meta.description || profile, locale), 160);
   const base = meta.siteUrl.replace(/\/$/, '');
-  const path = basePath(meta.siteUrl);
   const nlUrl = base;
   const enUrl = `${base}/en/`;
   const canonical = locale === 'nl' ? nlUrl : enUrl;
@@ -248,7 +247,7 @@ export function renderHead(data, locale) {
   };
   return `<title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
-  <link rel="icon" type="image/svg+xml" href="${path}favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="theme-color" content="#0f766e" />
   <link rel="canonical" href="${escapeHtml(canonical)}" />
   <link rel="alternate" hreflang="nl" href="${escapeHtml(nlUrl)}" />

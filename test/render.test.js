@@ -159,8 +159,8 @@ describe('renderHeader', () => {
     expect(renderHeader(data.meta, 'nl')).toContain('href="/cv/en/"');
     expect(renderHeader(data.meta, 'en')).toContain('href="/cv/"');
   });
-  it('gebruikt het base-pad voor de foto', () => {
-    expect(renderHeader(data.meta, 'nl')).toContain('src="/cv/photo.jpg"');
+  it('verwijst de foto root-relatief (Vite voegt de base toe)', () => {
+    expect(renderHeader(data.meta, 'nl')).toContain('src="/photo.jpg"');
   });
   it('toont GitHub/LinkedIn als volledige URL met icoon i.p.v. generiek label', () => {
     const html = renderHeader(data.meta, 'nl');
