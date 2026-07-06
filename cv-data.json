@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "name": "Voornaam Achternaam",
+    "title": { "nl": "Software Developer", "en": "Software Developer" },
+    "email": "naam@voorbeeld.nl",
+    "github": "https://github.com/gebruiker",
+    "linkedin": "https://www.linkedin.com/in/gebruiker",
+    "location": { "nl": "Utrecht, Nederland", "en": "Utrecht, Netherlands" },
+    "siteUrl": "https://www.voorbeeld.nl/cv",
+    "photoAlt": { "nl": "Profielfoto van Voornaam Achternaam", "en": "Profile photo of Voornaam Achternaam" }
+  },
+  "profile": {
+    "nl": "Gedreven software developer met ruime ervaring in het bouwen van webapplicaties met JavaScript en Python. Sterk in het vertalen van business-behoeften naar pragmatische technische oplossingen, met oog voor onderhoudbaarheid en gebruiksvriendelijkheid.",
+    "en": "Driven software developer with extensive experience building web applications with JavaScript and Python. Skilled at translating business needs into pragmatic technical solutions, with an eye for maintainability and usability."
+  },
+  "experience": [
+    {
+      "role": "Software Developer",
+      "company": "Bedrijf BV",
+      "period": "2023 – heden",
+      "location": { "nl": "Utrecht", "en": "Utrecht" },
+      "bullets": [
+        { "nl": "Bouwde en onderhield klantgerichte webapplicaties met React en Node.js.", "en": "Built and maintained customer-facing web applications with React and Node.js." },
+        { "nl": "Verbeterde de laadtijd van de belangrijkste applicatie met 40% door optimalisatie van queries en assets.", "en": "Improved the main application's load time by 40% by optimizing queries and assets." },
+        { "nl": "Werkte nauw samen met product en design in een scrumteam van zes personen.", "en": "Worked closely with product and design in a six-person scrum team." }
+      ]
+    },
+    {
+      "role": "Junior Developer",
+      "company": "Techstart Solutions",
+      "period": "2021 – 2023",
+      "location": { "nl": "Amersfoort", "en": "Amersfoort" },
+      "bullets": [
+        { "nl": "Ontwikkelde interne tools in Python om handmatige processen te automatiseren.", "en": "Developed internal tools in Python to automate manual processes." },
+        { "nl": "Schreef en onderhield geautomatiseerde tests, wat het aantal productiebugs verminderde.", "en": "Wrote and maintained automated tests, reducing the number of production bugs." }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": { "nl": "HBO Informatica", "en": "BSc Computer Science" },
+      "institution": "Hogeschool Utrecht",
+      "period": "2019 – 2023"
+    }
+  ],
+  "skills": [
+    {
+      "group": { "nl": "Talen", "en": "Languages" },
+      "items": ["JavaScript", "TypeScript", "Python"]
+    },
+    {
+      "group": { "nl": "Frameworks & tools", "en": "Frameworks & tools" },
+      "items": ["React", "Node.js", "Vite", "Git"]
+    },
+    {
+      "group": { "nl": "Overig", "en": "Other" },
+      "items": ["REST API's", "Docker", "CI/CD"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Projectnaam",
+      "url": "https://github.com/gebruiker/project",
+      "description": { "nl": "Een open-source tool voor het genereren van statische CV-websites vanuit JSON-data.", "en": "An open-source tool for generating static CV websites from JSON data." }
+    },
+    {
+      "name": "Takenplanner",
+      "url": "https://github.com/gebruiker/takenplanner",
+      "description": { "nl": "Een lichtgewicht webapplicatie voor het beheren van persoonlijke taken en deadlines.", "en": "A lightweight web application for managing personal tasks and deadlines." }
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Developer",
+      "issuer": "Amazon Web Services",
+      "year": "2024"
+    }
+  ],
+  "languages": [
+    {
+      "name": { "nl": "Nederlands", "en": "Dutch" },
+      "level": { "nl": "Moedertaal", "en": "Native" }
+    },
+    {
+      "name": { "nl": "Engels", "en": "English" },
+      "level": { "nl": "Vloeiend", "en": "Fluent" }
+    }
+  ],
+  "hobbies": [
+    { "nl": "Hardlopen", "en": "Running" },
+    { "nl": "Fotografie", "en": "Photography" },
+    { "nl": "Schaken", "en": "Chess" }
+  ]
+}
