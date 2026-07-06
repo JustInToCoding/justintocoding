@@ -95,3 +95,36 @@ body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min
 
 /* Focus-zichtbaarheid (toegankelijkheid) */
 a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body { background: #fff; font-size: 10pt; }
+
+  /* Vel vult de pagina, geen schaduw/marge/achtergrond van het scherm */
+  body > header,
+  body > main {
+    width: auto; margin: 0; box-shadow: none;
+  }
+
+  /* Kleuren (teal band, accenten) meenemen in de print */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* Schermelementen verbergen */
+  .masthead__lang { display: none; }
+
+  /* Marges via padding zodat de kleurband tot de rand loopt */
+  .masthead__inner { padding: 12mm var(--sheet-pad); }
+  .col { padding-top: 8mm; padding-bottom: 8mm; }
+
+  /* Items niet over paginagrens breken */
+  .entry, .skills__group, .lang, .cert, .section__title { break-inside: avoid; }
+  .section { break-inside: auto; }
+  .section__title { break-after: avoid; }
+
+  /* Links niet blauw/onderstreept in print, wel leesbaar */
+  a { color: inherit; text-decoration: none; }
+}
