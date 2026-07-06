@@ -36,13 +36,16 @@ function sectionTitle(key, locale) {
 }
 
 export function renderProfile(profile, locale) {
+  const text = t(profile, locale);
+  if (!text) return '';
   return `<section class="section" id="profiel">
     ${sectionTitle('profile', locale)}
-    <p class="profile">${escapeHtml(t(profile, locale))}</p>
+    <p class="profile">${escapeHtml(text)}</p>
   </section>`;
 }
 
 export function renderExperience(experience, locale) {
+  if (!experience.length) return '';
   const items = experience.map((job) => {
     const bullets = job.bullets
       .map((b) => `<li>${escapeHtml(t(b, locale))}</li>`)
@@ -50,7 +53,7 @@ export function renderExperience(experience, locale) {
     return `<article class="entry">
       <div class="entry__head">
         <h3 class="entry__role">${escapeHtml(job.role)}</h3>
-        <span class="entry__period">${escapeHtml(job.period)}</span>
+        <span class="entry__period">${escapeHtml(t(job.period, locale))}</span>
       </div>
       <div class="entry__meta">${escapeHtml(job.company)} · ${escapeHtml(t(job.location, locale))}</div>
       <ul class="entry__bullets">${bullets}</ul>
@@ -62,10 +65,11 @@ export function renderExperience(experience, locale) {
 }
 
 export function renderEducation(education, locale) {
+  if (!education.length) return '';
   const items = education.map((ed) => `<article class="entry">
       <div class="entry__head">
         <h3 class="entry__role">${escapeHtml(t(ed.degree, locale))}</h3>
-        <span class="entry__period">${escapeHtml(ed.period)}</span>
+        <span class="entry__period">${escapeHtml(t(ed.period, locale))}</span>
       </div>
       <div class="entry__meta">${escapeHtml(ed.institution)}</div>
     </article>`).join('');
@@ -75,6 +79,7 @@ export function renderEducation(education, locale) {
 }
 
 export function renderSkills(skills, locale) {
+  if (!skills.length) return '';
   const groups = skills.map((g) => {
     const items = g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('');
     return `<div class="skills__group">
@@ -88,6 +93,7 @@ export function renderSkills(skills, locale) {
 }
 
 export function renderProjects(projects, locale) {
+  if (!projects.length) return '';
   const items = projects.map((p) => `<article class="entry">
       <h3 class="entry__role">
         <a href="${escapeHtml(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.name)}</a>
@@ -100,6 +106,7 @@ export function renderProjects(projects, locale) {
 }
 
 export function renderCertifications(certifications, locale) {
+  if (!certifications.length) return '';
   const items = certifications.map((c) => `<li class="cert">
       <span class="cert__name">${escapeHtml(c.name)}</span>
       <span class="cert__meta">${escapeHtml(c.issuer)} · ${escapeHtml(c.year)}</span>
@@ -111,6 +118,7 @@ export function renderCertifications(certifications, locale) {
 }
 
 export function renderLanguages(languages, locale) {
+  if (!languages.length) return '';
   const items = languages.map((l) => `<li class="lang">
       <span class="lang__name">${escapeHtml(t(l.name, locale))}</span>
       <span class="lang__level">${escapeHtml(t(l.level, locale))}</span>
@@ -122,6 +130,7 @@ export function renderLanguages(languages, locale) {
 }
 
 export function renderHobbies(hobbies, locale) {
+  if (!hobbies.length) return '';
   const items = hobbies.map((h) => `<li>${escapeHtml(t(h, locale))}</li>`).join('');
   return `<section class="section" id="hobbys">
     ${sectionTitle('hobbies', locale)}

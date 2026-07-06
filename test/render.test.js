@@ -174,3 +174,44 @@ describe('renderBody', () => {
     expect(html).toContain('<main');
   });
 });
+
+describe('lege secties', () => {
+  it('renderExperience geeft leegte terug bij een lege array', () => {
+    expect(renderExperience([], 'nl')).toBe('');
+  });
+  it('renderCertifications geeft leegte terug bij een lege array', () => {
+    expect(renderCertifications([], 'nl')).toBe('');
+  });
+  it('renderProjects geeft leegte terug bij een lege array', () => {
+    expect(renderProjects([], 'en')).toBe('');
+  });
+  it('renderHobbies geeft leegte terug bij een lege array', () => {
+    expect(renderHobbies([], 'nl')).toBe('');
+  });
+  it('renderSkills, renderLanguages, renderEducation idem', () => {
+    expect(renderSkills([], 'nl')).toBe('');
+    expect(renderLanguages([], 'nl')).toBe('');
+    expect(renderEducation([], 'nl')).toBe('');
+  });
+  it('renderProfile geeft leegte terug bij lege tekst', () => {
+    expect(renderProfile({ nl: '', en: '' }, 'nl')).toBe('');
+  });
+  it('niet-lege secties renderen nog steeds normaal', () => {
+    expect(renderHobbies([{ nl: 'Zeilen', en: 'Sailing' }], 'nl')).toContain('Zeilen');
+  });
+});
+
+describe('vertaalbare periode', () => {
+  it('renderExperience vertaalt een {nl,en}-periode', () => {
+    const exp = [{
+      role: 'Dev', company: 'Acme', period: { nl: 'okt 2024 – heden', en: 'Oct 2024 – present' },
+      location: { nl: 'Utrecht', en: 'Utrecht' }, bullets: []
+    }];
+    expect(renderExperience(exp, 'nl')).toContain('okt 2024 – heden');
+    expect(renderExperience(exp, 'en')).toContain('Oct 2024 – present');
+  });
+  it('renderEducation vertaalt een {nl,en}-periode', () => {
+    const ed = [{ degree: { nl: 'x', en: 'x' }, institution: 'HU', period: { nl: '2011 – nu', en: '2011 – now' } }];
+    expect(renderEducation(ed, 'en')).toContain('2011 – now');
+  });
+});
