@@ -3,7 +3,7 @@
     "name": "Justin Steenhuis",
     "title": { "nl": "Freelance Solution Architect & Product Owner · AgriFood", "en": "Freelance Solution Architect & Product Owner · AgriFood" },
     "email": "info@justintocoding.com",
-    "github": "https://github.com/justinsteenhuis",
+    "github": "https://github.com/JustInToCoding",
     "linkedin": "https://www.linkedin.com/in/justinsteenhuis",
     "location": { "nl": "Nijmegen, Nederland", "en": "Nijmegen, Netherlands" },
     "siteUrl": "https://www.justintocoding.com/cv",
@@ -15,100 +15,120 @@
   },
   "experience": [
     {
-      "role": "Solution Architect",
       "company": "Wageningen Social & Economic Research",
-      "period": { "nl": "okt 2024 – heden", "en": "Oct 2024 – present" },
       "location": { "nl": "Wageningen", "en": "Wageningen" },
-      "bullets": [
-        { "nl": "Onderdeel van het Data Management Team van ReGeNL — een groeifondsprogramma van Stichting NextFoodCollective waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Part of the Data Management Team of ReGeNL — a growth-fund programme by Stichting NextFoodCollective in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
-        { "nl": "Verantwoordelijk voor het architecteren, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements." }
+      "roles": [
+        {
+          "role": "Solution Architect",
+          "period": { "nl": "okt 2024 – heden", "en": "Oct 2024 – present" },
+          "bullets": [
+            { "nl": "Onderdeel van het Data Management Team van ReGeNL — een groeifondsprogramma van Stichting NextFoodCollective waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Part of the Data Management Team of ReGeNL — a growth-fund programme by Stichting NextFoodCollective in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
+            { "nl": "Verantwoordelijk voor het architecteren, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements." }
+          ]
+        }
       ]
     },
     {
-      "role": "Freelance Solution Architect / Product Owner / Front-end Developer",
       "company": "JustInToCoding",
-      "period": { "nl": "sep 2024 – heden", "en": "Sep 2024 – present" },
       "location": { "nl": "Nederland", "en": "Netherlands" },
-      "bullets": [
-        { "nl": "Eigen freelance-praktijk: solution architecture, product ownership en front-end development voor opdrachtgevers in de AgriFood.", "en": "Own freelance practice: solution architecture, product ownership and front-end development for clients in AgriFood." }
+      "roles": [
+        {
+          "role": "Freelance Solution Architect / Product Owner / Front-end Developer",
+          "period": { "nl": "sep 2024 – heden", "en": "Sep 2024 – present" },
+          "bullets": [
+            { "nl": "Eigen freelance-praktijk: solution architecture, product ownership en front-end development voor opdrachtgevers in de AgriFood.", "en": "Own freelance practice: solution architecture, product ownership and front-end development for clients in AgriFood." }
+          ]
+        }
       ]
     },
     {
-      "role": "External Expert",
       "company": "Fontys ICT",
-      "period": { "nl": "sep 2022 – heden", "en": "Sep 2022 – present" },
       "location": { "nl": "Eindhoven", "en": "Eindhoven" },
-      "bullets": [
-        { "nl": "Adviseur in het afstudeer-beoordelingsproces: adviseert over de beoordeling vanaf het moment dat het portfolio beschikbaar is.", "en": "Advisor in the graduation assessment process: advises on assessment from the moment the portfolio becomes available." }
+      "roles": [
+        {
+          "role": "External Expert",
+          "period": { "nl": "sep 2022 – heden", "en": "Sep 2022 – present" },
+          "bullets": [
+            { "nl": "Adviseur in het afstudeer-beoordelingsproces: adviseert over de beoordeling vanaf het moment dat het portfolio beschikbaar is.", "en": "Advisor in the graduation assessment process: advises on assessment from the moment the portfolio becomes available." }
+          ]
+        }
       ]
     },
     {
-      "role": "Business Consultant",
       "company": "AeroVision B.V.",
-      "period": { "nl": "nov 2024 – okt 2025", "en": "Nov 2024 – Oct 2025" },
       "location": { "nl": "Amersfoort", "en": "Amersfoort" },
-      "bullets": []
-    },
-    {
-      "role": "Business Consultant & Product Owner",
-      "company": "VAA",
-      "period": { "nl": "dec 2023 – jun 2024", "en": "Dec 2023 – Jun 2024" },
-      "location": { "nl": "Rosmalen", "en": "Rosmalen" },
-      "bullets": [
-        { "nl": "Onderdeel van het nieuw opgezette business-developmentteam bij VAA; business analist/consultant bij Stichting Skal en product owner voor diverse producten en klanten.", "en": "Part of the newly created business development team at VAA; business analyst/consultant at Stichting Skal and product owner for various products and clients." }
+      "roles": [
+        {
+          "role": "Business Consultant",
+          "period": { "nl": "nov 2024 – okt 2025", "en": "Nov 2024 – Oct 2025" },
+          "bullets": []
+        }
       ]
     },
     {
-      "role": "Lead Front-end Developer & Product Owner",
       "company": "VAA",
-      "period": { "nl": "jan 2023 – nov 2023", "en": "Jan 2023 – Nov 2023" },
       "location": { "nl": "Rosmalen", "en": "Rosmalen" },
-      "bullets": [
-        { "nl": "Productontwikkeling en product ownership voor diverse producten en klanten; coachte en begeleidde front-end developers en stagiairs.", "en": "Product development and product ownership for various products and clients; coached and mentored front-end developers and interns." }
+      "roles": [
+        {
+          "role": "Business Consultant & Product Owner",
+          "period": { "nl": "dec 2023 – jun 2024", "en": "Dec 2023 – Jun 2024" },
+          "bullets": [
+            { "nl": "Onderdeel van het nieuw opgezette business-developmentteam bij VAA; business analist/consultant bij Stichting Skal en product owner voor diverse producten en klanten.", "en": "Part of the newly created business development team at VAA; business analyst/consultant at Stichting Skal and product owner for various products and clients." }
+          ]
+        },
+        {
+          "role": "Lead Front-end Developer & Product Owner",
+          "period": { "nl": "jan 2023 – nov 2023", "en": "Jan 2023 – Nov 2023" },
+          "bullets": [
+            { "nl": "Productontwikkeling en product ownership voor diverse producten en klanten; coachte en begeleidde front-end developers en stagiairs.", "en": "Product development and product ownership for various products and clients; coached and mentored front-end developers and interns." }
+          ]
+        },
+        {
+          "role": "Senior Front-end Developer, Product Owner & Project Lead",
+          "period": { "nl": "jan 2022 – dec 2022", "en": "Jan 2022 – Dec 2022" },
+          "bullets": [
+            { "nl": "Product Owner/projectleider voor De Heus: stuurde een offshore ontwikkelteam uit Nepal aan bij het bouwen van de Poultry Coach-app voor pluimveehouders in Afrika. Bleef met een technische achtergrond nauw betrokken bij developers en designers en leidde een design sprint om het project te starten.", "en": "Product Owner/project lead for De Heus: managed an offshore development team from Nepal building the Poultry Coach app for poultry farmers in Africa. Stayed closely involved with developers and designers thanks to a technical background, and led a design sprint to kick-start the project." }
+          ]
+        },
+        {
+          "role": "Front-end Developer & Product Owner",
+          "period": { "nl": "jan 2020 – dec 2021", "en": "Jan 2020 – Dec 2021" },
+          "bullets": [
+            { "nl": "Initieerde de 'Digitale Graslandgebruikskalender' en was product owner voor diverse R&D-projecten bij VAA.", "en": "Initiated the 'Digital Grassland Usage Calendar' and was product owner for various R&D projects at VAA." }
+          ]
+        },
+        {
+          "role": "Front-end Developer",
+          "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
+          "bullets": [
+            { "nl": "Diverse projecten voor klanten in de agri-/foodsector. Gespecialiseerd in datavisualisatie, GIS en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS and React." }
+          ]
+        }
       ]
     },
     {
-      "role": "Senior Front-end Developer, Product Owner & Project Lead",
-      "company": "VAA",
-      "period": { "nl": "jan 2022 – dec 2022", "en": "Jan 2022 – Dec 2022" },
-      "location": { "nl": "Rosmalen", "en": "Rosmalen" },
-      "bullets": [
-        { "nl": "Product Owner/projectleider voor De Heus: stuurde een offshore ontwikkelteam uit Nepal aan bij het bouwen van de Poultry Coach-app voor pluimveehouders in Afrika. Bleef met een technische achtergrond nauw betrokken bij developers en designers en leidde een design sprint om het project te starten.", "en": "Product Owner/project lead for De Heus: managed an offshore development team from Nepal building the Poultry Coach app for poultry farmers in Africa. Stayed closely involved with developers and designers thanks to a technical background, and led a design sprint to kick-start the project." }
-      ]
-    },
-    {
-      "role": "Front-end Developer & Product Owner",
-      "company": "VAA",
-      "period": { "nl": "jan 2020 – dec 2021", "en": "Jan 2020 – Dec 2021" },
-      "location": { "nl": "Rosmalen", "en": "Rosmalen" },
-      "bullets": [
-        { "nl": "Initieerde de 'Digitale Graslandgebruikskalender' en was product owner voor diverse R&D-projecten bij VAA.", "en": "Initiated the 'Digital Grassland Usage Calendar' and was product owner for various R&D projects at VAA." }
-      ]
-    },
-    {
-      "role": "Front-end Developer",
-      "company": "VAA",
-      "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
-      "location": { "nl": "Rosmalen", "en": "Rosmalen" },
-      "bullets": [
-        { "nl": "Diverse projecten voor klanten in de agri-/foodsector. Gespecialiseerd in datavisualisatie, GIS en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS and React." }
-      ]
-    },
-    {
-      "role": "Software Developer Intern",
       "company": "Fabriquartz",
-      "period": { "nl": "feb 2016 – jun 2016", "en": "Feb 2016 – Jun 2016" },
       "location": { "nl": "Arnhem", "en": "Arnhem" },
-      "bullets": [
-        { "nl": "Werkte als front-end developer aan een freight-managementapplicatie met Ember.js.", "en": "Worked as a front-end developer on a freight management application using Ember.js." }
+      "roles": [
+        {
+          "role": "Software Developer Intern",
+          "period": { "nl": "feb 2016 – jun 2016", "en": "Feb 2016 – Jun 2016" },
+          "bullets": [
+            { "nl": "Werkte als front-end developer aan een freight-managementapplicatie met Ember.js.", "en": "Worked as a front-end developer on a freight management application using Ember.js." }
+          ]
+        }
       ]
     },
     {
-      "role": "Web Development Intern",
       "company": "LinkU Internet Media",
-      "period": { "nl": "sep 2015 – jan 2016", "en": "Sep 2015 – Jan 2016" },
       "location": { "nl": "Nijmegen", "en": "Nijmegen" },
-      "bullets": []
+      "roles": [
+        {
+          "role": "Web Development Intern",
+          "period": { "nl": "sep 2015 – jan 2016", "en": "Sep 2015 – Jan 2016" },
+          "bullets": []
+        }
+      ]
     }
   ],
   "education": [

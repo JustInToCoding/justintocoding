@@ -47,16 +47,28 @@ export function renderProfile(profile, locale) {
 export function renderExperience(experience, locale) {
   if (!experience.length) return '';
   const items = experience.map((job) => {
-    const bullets = job.bullets
-      .map((b) => `<li>${escapeHtml(t(b, locale))}</li>`)
-      .join('');
-    return `<article class="entry">
-      <div class="entry__head">
-        <h3 class="entry__role">${escapeHtml(job.role)}</h3>
-        <span class="entry__period">${escapeHtml(t(job.period, locale))}</span>
+    const loc = job.location
+      ? `<span class="entry__loc">${escapeHtml(t(job.location, locale))}</span>`
+      : '';
+    const roles = job.roles.map((r) => {
+      const bullets = r.bullets && r.bullets.length
+        ? `<ul class="entry__bullets">${r.bullets.map((b) => `<li>${escapeHtml(t(b, locale))}</li>`).join('')}</ul>`
+        : '';
+      return `<div class="role">
+        <div class="entry__head">
+          <h4 class="role__title">${escapeHtml(r.role)}</h4>
+          <span class="entry__period">${escapeHtml(t(r.period, locale))}</span>
+        </div>
+        ${bullets}
+      </div>`;
+    }).join('');
+    const grouped = job.roles.length > 1 ? ' entry--grouped' : '';
+    return `<article class="entry${grouped}">
+      <div class="entry__company">
+        <h3 class="entry__org">${escapeHtml(job.company)}</h3>
+        ${loc}
       </div>
-      <div class="entry__meta">${escapeHtml(job.company)} · ${escapeHtml(t(job.location, locale))}</div>
-      <ul class="entry__bullets">${bullets}</ul>
+      ${roles}
     </article>`;
   }).join('');
   return `<section class="section" id="werkervaring">

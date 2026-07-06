@@ -34,22 +34,40 @@ describe('t', () => {
 
 describe('renderExperience', () => {
   const exp = [{
-    role: 'Dev', company: 'Acme', period: '2023 – heden',
+    company: 'Acme',
     location: { nl: 'Utrecht', en: 'Utrecht' },
-    bullets: [{ nl: 'Deed <X>', en: 'Did <X>' }]
+    roles: [{
+      role: 'Dev', period: '2023 – heden',
+      bullets: [{ nl: 'Deed <X>', en: 'Did <X>' }]
+    }]
   }];
-  it('toont rol, bedrijf, periode en bullets in de juiste taal', () => {
+  it('toont bedrijf, rol, periode en bullets in de juiste taal', () => {
     const html = renderExperience(exp, 'nl');
     expect(html).toContain('Dev');
     expect(html).toContain('Acme');
     expect(html).toContain('2023 – heden');
     expect(html).toContain('Deed &lt;X&gt;'); // ge-escaped
   });
-  it('rendert elk item als <article>', () => {
+  it('rendert elk bedrijf als <article>', () => {
     expect(renderExperience(exp, 'en')).toContain('<article');
   });
   it('kiest de Engelse teksten bij en-locale', () => {
     expect(renderExperience(exp, 'en')).toContain('Did &lt;X&gt;');
+  });
+  it('toont het bedrijf één keer met meerdere rollen eronder (VAA-stijl)', () => {
+    const grouped = [{
+      company: 'VAA',
+      location: { nl: 'Rosmalen', en: 'Rosmalen' },
+      roles: [
+        { role: 'Lead Developer', period: '2023', bullets: [] },
+        { role: 'Senior Developer', period: '2022', bullets: [] }
+      ]
+    }];
+    const html = renderExperience(grouped, 'nl');
+    expect(html.match(/VAA/g).length).toBe(1); // bedrijf één keer
+    expect(html).toContain('Lead Developer');
+    expect(html).toContain('Senior Developer');
+    expect(html).toContain('entry--grouped'); // tijdlijn-modifier
   });
 });
 
@@ -204,8 +222,8 @@ describe('lege secties', () => {
 describe('vertaalbare periode', () => {
   it('renderExperience vertaalt een {nl,en}-periode', () => {
     const exp = [{
-      role: 'Dev', company: 'Acme', period: { nl: 'okt 2024 – heden', en: 'Oct 2024 – present' },
-      location: { nl: 'Utrecht', en: 'Utrecht' }, bullets: []
+      company: 'Acme', location: { nl: 'Utrecht', en: 'Utrecht' },
+      roles: [{ role: 'Dev', period: { nl: 'okt 2024 – heden', en: 'Oct 2024 – present' }, bullets: [] }]
     }];
     expect(renderExperience(exp, 'nl')).toContain('okt 2024 – heden');
     expect(renderExperience(exp, 'en')).toContain('Oct 2024 – present');

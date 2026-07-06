@@ -80,6 +80,19 @@ body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min
 .entry__bullets { margin: 4px 0 0; padding-left: 18px; }
 .entry__bullets li { margin: 2px 0; }
 
+/* Bedrijf met (een of meer) rollen */
+.entry__company { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 3px; }
+.entry__org { margin: 0; font-size: 11.5pt; font-weight: 700; }
+.entry__loc { color: var(--muted); font-size: 9pt; white-space: nowrap; }
+.role { margin: 3px 0 5px; }
+.role__title { margin: 0; font-size: 10.5pt; font-weight: 600; }
+/* Tijdlijn-look wanneer een bedrijf meerdere rollen heeft (zoals VAA) */
+.entry--grouped .role { position: relative; margin-left: 3px; padding-left: 14px; border-left: 2px solid var(--line); }
+.entry--grouped .role::before {
+  content: ""; position: absolute; left: -5px; top: 5px;
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+}
+
 .skills__group { margin-bottom: 5mm; }
 .skills__name { margin: 0 0 4px; font-size: 10pt; font-weight: 600; }
 .skills__list, .lang-list, .hobby-list, .cert-list { list-style: none; margin: 0; padding: 0; }
