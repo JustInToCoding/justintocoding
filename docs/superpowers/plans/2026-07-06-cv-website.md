@@ -715,7 +715,7 @@ git commit -m "feat: inject rendered CV HTML at build via Vite plugin"
   --muted: #6b7280;
   --line: #e5e7eb;
   --sheet-w: 210mm;
-  --sheet-pad: 16mm;
+  --sheet-pad: 11mm;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
