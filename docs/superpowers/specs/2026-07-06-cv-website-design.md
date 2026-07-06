@@ -86,6 +86,19 @@ Voorbeeld:
 - Paginaformaat A4 (210 × 297 mm) met realistische marges; scherm-weergave oogt als papier.
 - CSS-variabelen voor kleur en spacing, zodat aanpassen eenvoudig is.
 
+## Beeldverwerking (profielfoto)
+
+- De foto wordt bij de build **verkleind, gecomprimeerd en naar WebP omgezet** (met JPEG-fallback),
+  omdat een onverkleinde bronfoto puur laadtijd kost — snelheid en CLS tellen mee voor Lighthouse/SEO.
+- **`scripts/process-photo.js`** gebruikt **`sharp`**: leest de bronfoto (`public/photo-src.jpg`) en
+  schrijft een verkleinde `public/photo.webp` én `public/photo.jpg`. Dit script draait automatisch
+  mee in `npm run build`. Deze aanpak past bij onze string-render-architectuur (de HTML wordt bij de
+  build gegenereerd, niet via JS-imports, waardoor import-gebaseerde plugins zoals vite-imagetools
+  minder goed passen; `vite-plugin-image-optimizer` comprimeert wel maar verkleint/converteert niet).
+- Doelgrootte: ~2× de weergavegrootte in de header (weergave ~140px → bron ~320px breed) voor retina.
+- In de HTML: `<picture>` met WebP-bron + JPEG-fallback, **expliciete `width`/`height`** (CLS = 0),
+  `loading="eager"` (foto staat bovenaan) en een beschrijvende `alt` (bv. "Profielfoto van [naam]").
+
 ## Print (`Ctrl+P`)
 
 - `@media print`: verbergt schermelementen (taalknop, schaduwen, pagina-achtergrond).
@@ -114,7 +127,10 @@ cv-data.json
 src/render.js         (render-functies per sectie)
 src/style.css
 vite.config.js        (custom render-plugin)
-public/photo.jpg      (profielfoto)
+scripts/process-photo.js   (sharp: verkleint/comprimeert/converteert de foto)
+public/photo-src.jpg  (bron-profielfoto, aangeleverd)
+public/photo.webp     (gegenereerd bij build)
+public/photo.jpg      (gegenereerde JPEG-fallback)
 package.json
 ```
 
