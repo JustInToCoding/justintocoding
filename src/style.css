@@ -1,1 +1,97 @@
-/* styling volgt in latere taken */
+:root {
+  --accent: #0f766e;
+  --accent-dark: #0b5c55;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --sheet-w: 210mm;
+  --sheet-pad: 16mm;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #e9ebef;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Papiervel */
+body > header,
+body > main {
+  width: var(--sheet-w);
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+}
+body > header { margin-top: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); }
+body > main   { margin-bottom: 12mm; box-shadow: 0 2px 16px rgba(0,0,0,.12); min-height: 40mm; }
+
+/* Kleurband-header */
+.masthead { background: var(--accent); color: #fff; }
+.masthead__inner {
+  display: flex; align-items: center; gap: 20px;
+  padding: 14mm var(--sheet-pad); position: relative;
+}
+.masthead__photo img {
+  width: 120px; height: 120px; border-radius: 50%;
+  object-fit: cover; border: 3px solid rgba(255,255,255,.85); display: block;
+}
+.masthead__name { margin: 0; font-size: 24pt; font-weight: 700; letter-spacing: -.5px; }
+.masthead__title { margin: 2px 0 10px; font-size: 12pt; opacity: .92; }
+.masthead__contact { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 9.5pt; }
+.masthead__contact a { color: #fff; text-decoration: none; }
+.masthead__contact a:hover, .masthead__contact a:focus { text-decoration: underline; }
+.masthead__lang {
+  position: absolute; top: 10px; right: var(--sheet-pad);
+  color: #fff; border: 1px solid rgba(255,255,255,.6); border-radius: 4px;
+  padding: 4px 10px; font-size: 9pt; text-decoration: none;
+}
+.masthead__lang:hover, .masthead__lang:focus { background: rgba(255,255,255,.15); }
+
+/* Twee kolommen */
+.sheet__main { display: grid; grid-template-columns: 1.9fr 1fr; gap: 0; }
+.col { padding: 10mm var(--sheet-pad); }
+.col--main { padding-right: 8mm; }
+.col--side { background: #f8fafb; border-left: 1px solid var(--line); }
+
+/* Secties */
+.section { margin: 0 0 7mm; }
+.section__title {
+  font-size: 11pt; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--accent); font-weight: 700; margin: 0 0 8px;
+  border-bottom: 2px solid var(--accent); padding-bottom: 4px;
+}
+.profile { margin: 0; }
+
+.entry { margin-bottom: 6mm; }
+.entry__head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.entry__role { margin: 0; font-size: 11.5pt; font-weight: 600; }
+.entry__role a { color: var(--accent-dark); text-decoration: none; }
+.entry__role a:hover, .entry__role a:focus { text-decoration: underline; }
+.entry__period { color: var(--muted); font-size: 9pt; white-space: nowrap; }
+.entry__meta { color: var(--muted); font-size: 9.5pt; margin: 2px 0 4px; }
+.entry__desc { margin: 2px 0 0; }
+.entry__bullets { margin: 4px 0 0; padding-left: 18px; }
+.entry__bullets li { margin: 2px 0; }
+
+.skills__group { margin-bottom: 5mm; }
+.skills__name { margin: 0 0 4px; font-size: 10pt; font-weight: 600; }
+.skills__list, .lang-list, .hobby-list, .cert-list { list-style: none; margin: 0; padding: 0; }
+.skills__list { display: flex; flex-wrap: wrap; gap: 6px; }
+.skills__list li {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 2px 8px; font-size: 9pt;
+}
+.lang, .cert { display: flex; flex-direction: column; margin-bottom: 8px; }
+.lang__name, .cert__name { font-weight: 600; font-size: 10pt; }
+.lang__level, .cert__meta { color: var(--muted); font-size: 9pt; }
+.hobby-list li { margin: 2px 0; }
+
+/* Focus-zichtbaarheid (toegankelijkheid) */
+a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
