@@ -1,0 +1,27 @@
+{
+  "name": "justintocoding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "photos": "node scripts/process-photo.js",
+    "dev": "vite",
+    "build": "npm run photos && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.1.3",
+    "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}
