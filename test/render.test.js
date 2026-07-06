@@ -21,4 +21,7 @@ describe('t', () => {
   it('laat arrays ongemoeid', () => {
     expect(t(['a', 'b'], 'nl')).toEqual(['a', 'b']);
   });
+  it('valt terug op de andere taal als de gevraagde ontbreekt', () => {
+    expect(t({ nl: 'Alleen NL' }, 'en')).toBe('Alleen NL');
+  });
 });

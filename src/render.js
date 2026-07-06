@@ -17,8 +17,12 @@ export function escapeHtml(value) {
 }
 
 export function t(value, locale) {
-  if (value && typeof value === 'object' && !Array.isArray(value) && locale in value) {
-    return value[locale];
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    if (locale in value) return value[locale];
+    // Graceful fallback: a translation object missing the requested locale
+    // degrades to the other language instead of rendering "[object Object]".
+    const other = locale === 'nl' ? 'en' : 'nl';
+    if (other in value) return value[other];
   }
   return value;
 }
