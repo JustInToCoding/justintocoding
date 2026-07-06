@@ -133,10 +133,19 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   /* Twee kolommen zoals op het scherm, maar met floats i.p.v. grid:
      floats behouden de linker/rechter-indeling én breken door over pagina's
      (CSS-grid fragmenteert niet betrouwbaar bij afdrukken). */
-  .sheet__main { display: block; }
+  .sheet__main {
+    display: block;
+    /* Faux-kolom: schildert de rechterbalk (lijn + lichte vulling) over de
+       volle hoogte van de container, dus doorlopend over alle pagina's —
+       ook al is de zijbalk-inhoud korter dan de hoofdkolom. */
+    background: linear-gradient(to right,
+      #fff 0 65%,
+      var(--line) 65% calc(65% + 1px),
+      #f8fafb calc(65% + 1px) 100%);
+  }
   .sheet__main::after { content: ""; display: table; clear: both; }
   .col--main { float: left; width: 64%; }
-  .col--side { float: right; width: 35%; }
+  .col--side { float: right; width: 35%; background: transparent; border-left: none; }
 
   /* Marges via padding (zoals op het scherm) */
   .masthead__inner { padding: 12mm var(--sheet-pad); }
