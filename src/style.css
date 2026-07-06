@@ -116,10 +116,9 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
 }
 
 @media print {
-  html, body { margin: 0; padding: 0; }
   body { background: #fff; font-size: 10pt; }
 
-  /* Vel vult de pagina volledig (full-bleed): geen schaduw, geen zijmarges */
+  /* Vel vult de paginabreedte, geen schaduw */
   body > header,
   body > main {
     width: auto; margin: 0; box-shadow: none;
@@ -136,9 +135,9 @@ a:focus-visible { outline: 2px solid var(--accent-dark); outline-offset: 2px; }
   .sheet__main { display: block; }
   .col--side { background: transparent; border-left: none; padding-top: 0; }
 
-  /* Smalle, gelijke zijranden zodat header en tekst uitlijnen zonder brede witte balken */
-  .masthead__inner { padding: 10mm 8mm; }
-  .col { padding: 6mm 8mm; }
+  /* Marges via padding (zoals op het scherm) */
+  .masthead__inner { padding: 12mm var(--sheet-pad); }
+  .col { padding-top: 8mm; padding-bottom: 8mm; }
 
   /* Rollen/items niet over de paginagrens breken; bedrijfskop bij eerste rol houden */
   .role, .skills__group, .lang, .cert { break-inside: avoid; }
