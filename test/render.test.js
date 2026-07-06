@@ -3,7 +3,8 @@ import { escapeHtml, t } from '../src/render.js';
 import {
   renderProfile, renderExperience, renderSkills,
   renderProjects, renderLanguages, renderHobbies,
-  safeUrl, renderEducation, renderCertifications
+  safeUrl, renderEducation, renderCertifications,
+  renderHeader, renderBody, renderHead
 } from '../src/render.js';
 
 describe('escapeHtml', () => {
@@ -106,5 +107,56 @@ describe('renderCertifications', () => {
     expect(html).toContain('AWS');
     expect(html).toContain('Amazon');
     expect(html).toContain('2024');
+  });
+});
+
+const data = {
+  meta: {
+    name: 'Jane Doe', title: { nl: 'Dev', en: 'Dev' },
+    email: 'jane@x.nl', github: 'https://github.com/jane',
+    linkedin: 'https://linkedin.com/in/jane',
+    location: { nl: 'Utrecht', en: 'Utrecht' },
+    siteUrl: 'https://x.nl/cv',
+    photoAlt: { nl: 'Foto van Jane', en: 'Photo of Jane' }
+  },
+  profile: { nl: 'p', en: 'p' }, experience: [], education: [],
+  skills: [], projects: [], certifications: [], languages: [], hobbies: []
+};
+
+describe('renderHeader', () => {
+  it('toont naam als h1 en een mailto-link', () => {
+    const html = renderHeader(data.meta, 'nl');
+    expect(html).toContain('<h1');
+    expect(html).toContain('Jane Doe');
+    expect(html).toContain('mailto:jane@x.nl');
+  });
+  it('gebruikt <picture> met webp + jpg-fallback en alt-tekst', () => {
+    const html = renderHeader(data.meta, 'en');
+    expect(html).toContain('photo.webp');
+    expect(html).toContain('photo.jpg');
+    expect(html).toContain('Photo of Jane');
+  });
+  it('linkt de taalknop naar de andere taal', () => {
+    expect(renderHeader(data.meta, 'nl')).toContain('href="/en/"');
+    expect(renderHeader(data.meta, 'en')).toContain('href="/"');
+  });
+});
+
+describe('renderHead', () => {
+  it('bevat een title, description, hreflang en JSON-LD Person', () => {
+    const html = renderHead(data, 'nl');
+    expect(html).toContain('<title>');
+    expect(html).toContain('name="description"');
+    expect(html).toContain('hreflang="nl"');
+    expect(html).toContain('hreflang="en"');
+    expect(html).toContain('"@type": "Person"');
+  });
+});
+
+describe('renderBody', () => {
+  it('bevat header en main', () => {
+    const html = renderBody(data, 'nl');
+    expect(html).toContain('<header');
+    expect(html).toContain('<main');
   });
 });
