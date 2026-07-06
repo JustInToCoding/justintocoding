@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { escapeHtml, t, linkLabel } from '../src/render.js';
+import { escapeHtml, t, linkLabel, basePath } from '../src/render.js';
 import {
   renderProfile, renderExperience, renderSkills,
   renderProjects, renderLanguages, renderHobbies,
@@ -154,9 +154,13 @@ describe('renderHeader', () => {
     expect(html).toContain('photo.jpg');
     expect(html).toContain('Photo of Jane');
   });
-  it('linkt de taalknop naar de andere taal', () => {
-    expect(renderHeader(data.meta, 'nl')).toContain('href="/en/"');
-    expect(renderHeader(data.meta, 'en')).toContain('href="/"');
+  it('linkt de taalknop naar de andere taal, met base-pad', () => {
+    // data.meta.siteUrl = https://x.nl/cv -> base "/cv/"
+    expect(renderHeader(data.meta, 'nl')).toContain('href="/cv/en/"');
+    expect(renderHeader(data.meta, 'en')).toContain('href="/cv/"');
+  });
+  it('gebruikt het base-pad voor de foto', () => {
+    expect(renderHeader(data.meta, 'nl')).toContain('src="/cv/photo.jpg"');
   });
   it('toont GitHub/LinkedIn als volledige URL met icoon i.p.v. generiek label', () => {
     const html = renderHeader(data.meta, 'nl');
@@ -171,7 +175,14 @@ describe('renderHeader', () => {
 describe('linkLabel', () => {
   it('geeft de volledige URL zonder protocol en www', () => {
     expect(linkLabel('https://github.com/JustInToCoding')).toBe('github.com/JustInToCoding');
-    expect(linkLabel('https://www.linkedin.com/in/justinsteenhuis')).toBe('linkedin.com/in/justinsteenhuis');
+    expect(linkLabel('https://www.linkedin.com/in/justin-steenhuis')).toBe('linkedin.com/in/justin-steenhuis');
+  });
+});
+
+describe('basePath', () => {
+  it('leidt het subpad af uit siteUrl', () => {
+    expect(basePath('https://www.justintocoding.com/cv')).toBe('/cv/');
+    expect(basePath('https://cv.justintocoding.com')).toBe('/');
   });
 });
 
@@ -185,11 +196,15 @@ describe('renderHead', () => {
     expect(html).toContain('"@type": "Person"');
     expect(html).toContain('rel="icon"');
   });
-  it('kapt de meta-description af op een woordgrens met ellipsis', () => {
-    const longData = { ...data, profile: { nl: 'woord '.repeat(60), en: 'word '.repeat(60) } };
+  it('gebruikt het description-veld als dat er is', () => {
+    const d = { ...data, meta: { ...data.meta, description: { nl: 'Mijn korte pitch.', en: 'My short pitch.' } } };
+    expect(renderHead(d, 'nl')).toContain('Mijn korte pitch.');
+  });
+  it('kapt een te lange description af op een woordgrens met ellipsis', () => {
+    const longData = { ...data, meta: { ...data.meta, description: { nl: 'woord '.repeat(60), en: 'word '.repeat(60) } } };
     const html = renderHead(longData, 'nl');
     const m = html.match(/name="description" content="([^"]*)"/);
-    expect(m[1].length).toBeLessThanOrEqual(156);
+    expect(m[1].length).toBeLessThanOrEqual(161);
     expect(m[1].endsWith('…')).toBe(true);
     expect(m[1]).not.toMatch(/woor$/); // niet mid-woord afgekapt
   });

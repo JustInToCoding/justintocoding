@@ -163,13 +163,25 @@ export function linkLabel(url) {
   return String(url).replace(/^https?:\/\//i, '').replace(/^www\./i, '').replace(/\/+$/, '');
 }
 
+// Base-pad van de site (bv. "/cv/") afgeleid uit siteUrl, zodat asset- en
+// navigatielinks kloppen wanneer de CV onder een subpad wordt gehost (Vercel /cv/).
+export function basePath(siteUrl) {
+  try {
+    const p = new URL(siteUrl).pathname;
+    return p.endsWith('/') ? p : p + '/';
+  } catch {
+    return '/';
+  }
+}
+
 export function renderHeader(meta, locale) {
-  const switchHref = locale === 'nl' ? '/en/' : '/';
+  const base = basePath(meta.siteUrl);
+  const switchHref = locale === 'nl' ? `${base}en/` : base;
   return `<header class="masthead">
     <div class="masthead__inner">
       <picture class="masthead__photo">
-        <source srcset="/photo.webp" type="image/webp" />
-        <img src="/photo.jpg" width="140" height="140"
+        <source srcset="${base}photo.webp" type="image/webp" />
+        <img src="${base}photo.jpg" width="140" height="140"
              alt="${escapeHtml(t(meta.photoAlt, locale))}" loading="eager" decoding="async" />
       </picture>
       <div class="masthead__intro">
@@ -217,8 +229,10 @@ function truncate(str, max) {
 export function renderHead(data, locale) {
   const { meta, profile } = data;
   const title = `${meta.name} — ${t(meta.title, locale)}`;
-  const description = truncate(t(profile, locale), 155);
+  // Eigen, afgeronde beschrijving; valt terug op het profiel. Ruime limiet als vangnet.
+  const description = truncate(t(meta.description || profile, locale), 160);
   const base = meta.siteUrl.replace(/\/$/, '');
+  const path = basePath(meta.siteUrl);
   const nlUrl = base;
   const enUrl = `${base}/en/`;
   const canonical = locale === 'nl' ? nlUrl : enUrl;
@@ -234,7 +248,7 @@ export function renderHead(data, locale) {
   };
   return `<title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="${path}favicon.svg" />
   <meta name="theme-color" content="#0f766e" />
   <link rel="canonical" href="${escapeHtml(canonical)}" />
   <link rel="alternate" hreflang="nl" href="${escapeHtml(nlUrl)}" />

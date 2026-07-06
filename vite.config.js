@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite';
 import { readFileSync } from 'node:fs';
-import { renderHead, renderBody } from './src/render.js';
+import { renderHead, renderBody, basePath } from './src/render.js';
+
+// Base-pad afgeleid uit siteUrl in cv-data.json (bv. "/cv/"), zodat Vite alle
+// asset-URL's onder dat subpad plaatst — nodig voor hosting op justintocoding.com/cv.
+const cvData = JSON.parse(readFileSync(new URL('./cv-data.json', import.meta.url)));
+const base = basePath(cvData.meta.siteUrl);
 
 function cvRenderPlugin() {
   return {
@@ -20,6 +25,7 @@ function cvRenderPlugin() {
 }
 
 export default defineConfig({
+  base,
   plugins: [cvRenderPlugin()],
   build: {
     rollupOptions: {

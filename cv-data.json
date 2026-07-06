@@ -1,17 +1,21 @@
 {
   "meta": {
     "name": "Justin Steenhuis",
-    "title": { "nl": "Freelance Solution Architect & Product Owner · AgriFood", "en": "Freelance Solution Architect & Product Owner · AgriFood" },
+    "title": { "nl": "Freelance Solution Architect · Agrifoodsector", "en": "Freelance Solution Architect · Agri-food" },
     "email": "info@justintocoding.com",
     "github": "https://github.com/JustInToCoding",
-    "linkedin": "https://www.linkedin.com/in/justinsteenhuis",
+    "linkedin": "https://www.linkedin.com/in/justin-steenhuis",
     "location": { "nl": "Nijmegen, Nederland", "en": "Nijmegen, Netherlands" },
     "siteUrl": "https://www.justintocoding.com/cv",
-    "photoAlt": { "nl": "Profielfoto van Justin Steenhuis", "en": "Profile photo of Justin Steenhuis" }
+    "photoAlt": { "nl": "Profielfoto van Justin Steenhuis", "en": "Profile photo of Justin Steenhuis" },
+    "description": {
+      "nl": "Freelance Solution Architect & Product Owner met bijna tien jaar ervaring in front-end, data en cloud binnen de agrifoodsector.",
+      "en": "Freelance Solution Architect & Product Owner with nearly ten years of front-end, data and cloud experience in the agri-food sector."
+    }
   },
   "profile": {
-    "nl": "Freelance Solution Architect en Product Owner met een sterke front-end achtergrond, gespecialiseerd in de AgriFood-sector. Bijna tien jaar ervaring in het vertalen van complexe databehoeften naar werkende oplossingen — van datavisualisatie, GIS en React tot cloud (AWS) en teamaansturing. Combineert technische diepgang met productdenken en brengt developers, designers en stakeholders samen om waarde te leveren.",
-    "en": "Freelance Solution Architect and Product Owner with a strong front-end background, specialised in the AgriFood sector. Nearly ten years of experience translating complex data needs into working solutions — from data visualisation, GIS and React to cloud (AWS) and team leadership. Combines technical depth with product thinking, bringing developers, designers and stakeholders together to deliver value."
+    "nl": "Freelance Solution Architect en Product Owner met een sterke front-end achtergrond, gespecialiseerd in de agrifoodsector. Bijna tien jaar ervaring in het vertalen van complexe databehoeften naar werkende oplossingen — van datavisualisatie, GIS en React tot cloud (AWS) en teamaansturing. Combineert technische diepgang met productdenken en brengt developers, designers en stakeholders samen om waarde te leveren.",
+    "en": "Freelance Solution Architect and Product Owner with a strong front-end background, specialised in the agri-food sector. Nearly ten years of experience translating complex data needs into working solutions — from data visualisation, GIS and React to cloud (AWS) and team leadership. Combines technical depth with product thinking, bringing developers, designers and stakeholders together to deliver value."
   },
   "experience": [
     {
@@ -23,7 +27,7 @@
           "period": { "nl": "okt 2024 – heden", "en": "Oct 2024 – present" },
           "bullets": [
             { "nl": "Onderdeel van het Data Management Team van ReGeNL — een groeifondsprogramma van Stichting NextFoodCollective waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Part of the Data Management Team of ReGeNL — a growth-fund programme by Stichting NextFoodCollective in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
-            { "nl": "Verantwoordelijk voor het architecteren, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements." }
+            { "nl": "Verantwoordelijk voor het ontwerpen, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements." }
           ]
         }
       ]
@@ -36,7 +40,7 @@
           "role": "Freelance Solution Architect / Product Owner / Front-end Developer",
           "period": { "nl": "sep 2024 – heden", "en": "Sep 2024 – present" },
           "bullets": [
-            { "nl": "Eigen freelance-praktijk: solution architecture, product ownership en front-end development voor opdrachtgevers in de AgriFood.", "en": "Own freelance practice: solution architecture, product ownership and front-end development for clients in AgriFood." }
+            { "nl": "Eigen freelance-praktijk: solution architecture, product ownership en front-end development voor opdrachtgevers in de agrifoodsector.", "en": "Own freelance practice: solution architecture, product ownership and front-end development for clients in the agri-food sector." }
           ]
         }
       ]
@@ -101,7 +105,7 @@
           "role": "Front-end Developer",
           "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
           "bullets": [
-            { "nl": "Diverse projecten voor klanten in de agri-/foodsector. Gespecialiseerd in datavisualisatie, GIS en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS and React." }
+            { "nl": "Diverse projecten voor klanten in de agrifoodsector. Gespecialiseerd in datavisualisatie, GIS en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS and React." }
           ]
         }
       ]
@@ -150,7 +154,7 @@
   ],
   "skills": [
     { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["React", "JavaScript", "Data visualisation", "GIS", "HTML & CSS"] },
-    { "group": { "nl": "Backend & Cloud", "en": "Backend & Cloud" }, "items": ["Node.js", "AWS"] },
+    { "group": { "nl": "Back-end & Cloud", "en": "Back-end & Cloud" }, "items": ["Node.js", "AWS"] },
     { "group": { "nl": "Rollen & aanpak", "en": "Roles & approach" }, "items": ["Solution Architecture", "Product Ownership", "Business Consultancy", "Design Sprints", "Coaching & mentoring"] }
   ],
   "projects": [],
