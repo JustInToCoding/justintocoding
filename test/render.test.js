@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { escapeHtml, t, linkLabel, basePath } from '../src/render.js';
 import {
   renderProfile, renderExperience, renderSkills,
-  renderProjects, renderLanguages, renderHobbies,
+  renderProjects, renderLanguages, renderHobbies, renderInterests,
   safeUrl, renderEducation, renderCertifications,
   renderHeader, renderBody, renderHead
 } from '../src/render.js';
@@ -97,6 +97,25 @@ describe('renderHobbies', () => {
   it('rendert alle hobby-items', () => {
     const html = renderHobbies([{ nl: 'Lezen', en: 'Reading' }], 'en');
     expect(html).toContain('Reading');
+  });
+});
+
+describe('renderInterests', () => {
+  it('rendert de sectietitel en plain-string items', () => {
+    const html = renderInterests(['Open Source', 'Remote sensing'], 'nl');
+    expect(html).toContain('Interesses');
+    expect(html).toContain('Open Source');
+    expect(html).toContain('Remote sensing');
+  });
+
+  it('vertaalt items die een vertaalobject zijn', () => {
+    const items = [{ nl: 'Agrarisch domein', en: 'Agricultural domain' }];
+    expect(renderInterests(items, 'nl')).toContain('Agrarisch domein');
+    expect(renderInterests(items, 'en')).toContain('Agricultural domain');
+  });
+
+  it('geeft leegte terug bij een lege array', () => {
+    expect(renderInterests([], 'nl')).toBe('');
   });
 });
 

@@ -6,6 +6,7 @@ export const LABELS = {
   projects:       { nl: "Projecten",       en: "Projects" },
   certifications: { nl: "Certificeringen", en: "Certifications" },
   languages:      { nl: "Talen",           en: "Languages" },
+  interests:      { nl: "Interesses",      en: "Interests" },
   hobbies:        { nl: "Hobby's",         en: "Hobbies" },
   switchLang:     { nl: "English",         en: "Nederlands" },
   switchAria:     { nl: "Schakel naar Engels", en: "Switch to Dutch" }
@@ -65,7 +66,7 @@ export function renderExperience(experience, locale) {
     const grouped = job.roles.length > 1 ? ' entry--grouped' : '';
     return `<article class="entry${grouped}">
       <div class="entry__company">
-        <h3 class="entry__org">${escapeHtml(job.company)}</h3>
+        <h3 class="entry__org">${escapeHtml(t(job.company, locale))}</h3>
         ${loc}
       </div>
       ${roles}
@@ -141,6 +142,15 @@ export function renderLanguages(languages, locale) {
   </section>`;
 }
 
+export function renderInterests(interests, locale) {
+  if (!interests.length) return '';
+  const items = interests.map((i) => `<li>${escapeHtml(t(i, locale))}</li>`).join('');
+  return `<section class="section" id="interesses">
+    ${sectionTitle('interests', locale)}
+    <ul class="skills__list">${items}</ul>
+  </section>`;
+}
+
 export function renderHobbies(hobbies, locale) {
   if (!hobbies.length) return '';
   const items = hobbies.map((h) => `<li>${escapeHtml(t(h, locale))}</li>`).join('');
@@ -211,6 +221,7 @@ export function renderBody(data, locale) {
     </div>
     <aside class="col col--side">
       ${renderSkills(data.skills, locale)}
+      ${renderInterests(data.interests || [], locale)}
       ${renderLanguages(data.languages, locale)}
       ${renderCertifications(data.certifications, locale)}
       ${renderHobbies(data.hobbies, locale)}

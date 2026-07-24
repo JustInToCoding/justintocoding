@@ -46,7 +46,7 @@
       ]
     },
     {
-      "company": "Fontys ICT",
+      "company": { "nl": "Fontys Hogeschool ICT", "en": "Fontys University of Applied Sciences — ICT" },
       "location": { "nl": "Eindhoven", "en": "Eindhoven" },
       "roles": [
         {
@@ -59,13 +59,15 @@
       ]
     },
     {
-      "company": "AeroVision B.V.",
+      "company": "AeroVision B.V. — SOIL-Data",
       "location": { "nl": "Amersfoort", "en": "Amersfoort" },
       "roles": [
         {
-          "role": "Business Consultant",
+          "role": "Technical Lead",
           "period": { "nl": "nov 2024 – okt 2025", "en": "Nov 2024 – Oct 2025" },
-          "bullets": []
+          "bullets": [
+            { "nl": "De architectuur bedacht en meegebouwd aan een nieuw platform dat eindgebruikers realtime inzicht geeft in gewasgroei, bodemomstandigheden en de prestaties van hun percelen, op basis van satellietbeelden en geavanceerde analyses. Vanuit een API-first-aanpak ontworpen zodat het naadloos integreert in bestaande klantsystemen. Daarnaast de developer in het team begeleid en opgeleid.", "en": "Designed the architecture and helped build a new platform that gives end users real-time insight into crop growth, soil conditions and field performance, based on satellite imagery and advanced analytics. Built around an API-first approach so it integrates seamlessly into customers' existing systems. Also mentored and trained the developer on the team." }
+          ]
         }
       ]
     },
@@ -154,9 +156,10 @@
   ],
   "skills": [
     { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["React", "JavaScript", "Data visualisation", "GIS", "HTML & CSS"] },
-    { "group": { "nl": "Back-end & Cloud", "en": "Back-end & Cloud" }, "items": ["Node.js", "AWS"] },
+    { "group": { "nl": "Back-end & Cloud", "en": "Back-end & Cloud" }, "items": ["Node.js", "AWS", "Azure"] },
     { "group": { "nl": "Rollen & aanpak", "en": "Roles & approach" }, "items": ["Solution Architecture", "Product Ownership", "Business Consultancy", "Design Sprints", "Coaching & mentoring"] }
   ],
+  "interests": ["Open Source", "Data Spaces", "Hackathons", "Home Automation", { "nl": "Agrarisch domein", "en": "Agricultural domain" }, "Remote sensing"],
   "projects": [],
   "certifications": [],
   "languages": [
