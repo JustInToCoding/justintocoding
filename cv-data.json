@@ -112,7 +112,7 @@
           "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
           "bullets": [
             { "nl": "Diverse projecten voor klanten in de agrifoodsector. Gespecialiseerd in datavisualisatie, GIS (o.a. geodiensten van PDOK) en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS (including PDOK geo services) and React." },
-            { "nl": "Technieken: JavaScript (React); code review bij elk project.", "en": "Technologies: JavaScript (React); code review on every project." }
+            { "nl": "Technieken: JavaScript (React), SQL (via een ORM en eigen SQL-scripts voor performance, o.a. voor het e-commerceplatform van De Heus en de KringloopWijzer); code review bij elk project.", "en": "Technologies: JavaScript (React), SQL (via an ORM and custom SQL scripts for performance, including for the De Heus e-commerce platform and the KringloopWijzer); code review on every project." }
           ]
         }
       ]
