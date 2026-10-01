@@ -28,6 +28,7 @@
           "bullets": [
             { "nl": "Onderdeel van het Data Management Team van ReGeNL — een Nationaal Groeifonds-programma van Stichting Next Food Collective, in opdracht van het ministerie van LVVN, waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Part of the Data Management Team of ReGeNL — a National Growth Fund programme by Stichting Next Food Collective, commissioned by the Dutch Ministry of Agriculture (LVVN), in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
             { "nl": "Verantwoordelijk voor het ontwerpen, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken, met data-space-principes als uitgangspunt: data blijft bij de bron, de boer houdt zeggenschap en krijgt de eigen data terug.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements, based on data space principles: data stays at the source, farmers stay in control and get their data back." },
+            { "nl": "Technieken: Python (geofuncties); code review bij elk project.", "en": "Technologies: Python (geo functions); code review on every project." },
             { "nl": "Betrokken bij DESA, de verkenning van LVVN naar een federatief data-ecosysteem voor de agrosector: werkte samen met het datamanagementteam de ReGeNL-use cases uit die aansluiten op de DESA-kernservices (deelnemersregister, machtigen, gegevensdelingsovereenkomst, connector).", "en": "Involved in DESA, the Dutch ministry's exploration of a federated data ecosystem for agriculture: co-developed the ReGeNL use cases that build on the DESA core services (participant registry, authorisation, data-sharing agreement, connector)." }
           ]
         }
@@ -79,11 +80,13 @@
       "location": { "nl": "Rosmalen", "en": "Rosmalen" },
       "roles": [
         {
-          "role": "Business Consultant & Product Owner",
+          "role": "Business Consultant, Architect & Product Owner",
           "period": { "nl": "dec 2023 – jun 2024", "en": "Dec 2023 – Jun 2024" },
           "bullets": [
             { "nl": "Onderdeel van het nieuw opgezette business-developmentteam bij VAA en product owner voor diverse producten en klanten.", "en": "Part of the newly created business development team at VAA and product owner for various products and clients." },
-            { "nl": "Business consultant bij Stichting Skal, de toezichthouder op biologische productie: analyseerde en bracht bestaande systemen en processen in kaart, en adviseerde over en ontwierp een vernieuwd systeem.", "en": "Business consultant at Stichting Skal, the Dutch supervisory body for organic production: analysed and mapped existing systems and processes, and advised on and designed a renewed system." }
+            { "nl": "Business consultant bij Stichting Skal, de toezichthouder op biologische productie: analyseerde en bracht bestaande systemen en processen in kaart, en adviseerde over en ontwierp een vernieuwd systeem.", "en": "Business consultant at Stichting Skal, the Dutch supervisory body for organic production: analysed and mapped existing systems and processes, and advised on and designed a renewed system." },
+            { "nl": "Van 2023 tot jun 2024 betrokken bij NXTGEN Hightech use case 8, de Hollandse Datalinie: werkte mee aan het ontwerp en de realisatie van een data-space-architectuur waarin de boer grip houdt op eigen data. Onderzocht iSHARE en het Solid-protocol en experimenteerde met Solid.", "en": "From 2023 to Jun 2024, involved in NXTGEN Hightech use case 8, the Hollandse Datalinie: helped design and build a data space architecture that keeps farmers in control of their own data. Evaluated iSHARE and the Solid protocol and experimented with Solid." },
+            { "nl": "Technieken: code review bij elk project.", "en": "Technologies: code review on every project." }
           ]
         },
         {
@@ -91,8 +94,8 @@
           "period": { "nl": "jan 2022 – nov 2023", "en": "Jan 2022 – Nov 2023" },
           "bullets": [
             { "nl": "Software architect en technisch lead voor diverse producten en klanten, full-stack; reviewde front- en back-endcode en coachte developers en stagiairs.", "en": "Software architect and technical lead for various products and clients, full-stack; reviewed front-end and back-end code and coached developers and interns." },
-            { "nl": "Van 2023 tot jun 2024 betrokken bij NXTGEN Hightech use case 8, de Hollandse Datalinie: werkte mee aan het ontwerp en de realisatie van een data-space-architectuur waarin de boer grip houdt op eigen data. Onderzocht iSHARE en het Solid-protocol en experimenteerde met Solid.", "en": "From 2023 to Jun 2024, involved in NXTGEN Hightech use case 8, the Hollandse Datalinie: helped design and build a data space architecture that keeps farmers in control of their own data. Evaluated iSHARE and the Solid protocol and experimented with Solid." },
-            { "nl": "Product Owner/projectleider voor De Heus: stuurde een offshore ontwikkelteam uit Nepal aan bij het bouwen van de Poultry Coach-app voor pluimveehouders in Afrika en leidde een design sprint om het project te starten.", "en": "Product Owner/project lead for De Heus: managed an offshore development team from Nepal building the Poultry Coach app for poultry farmers in Africa, and led a design sprint to kick-start the project." }
+            { "nl": "Product Owner/projectleider voor De Heus: stuurde een offshore ontwikkelteam uit Nepal aan bij het bouwen van de Poultry Coach-app voor pluimveehouders in Afrika en leidde een design sprint om het project te starten.", "en": "Product Owner/project lead for De Heus: managed an offshore development team from Nepal building the Poultry Coach app for poultry farmers in Africa, and led a design sprint to kick-start the project." },
+            { "nl": "Technieken: JavaScript (React); code review van front- en back-endcode bij elk project.", "en": "Technologies: JavaScript (React); front-end and back-end code review on every project." }
           ]
         },
         {
@@ -100,14 +103,16 @@
           "period": { "nl": "jan 2020 – dec 2021", "en": "Jan 2020 – Dec 2021" },
           "bullets": [
             { "nl": "Initieerde de 'Digitale Graslandgebruikskalender' en had er de technische leadrol: monitort met satellietdata grasgroei en maaimomenten. Daarnaast product owner voor diverse R&D-projecten bij VAA.", "en": "Initiated the 'Digital Grassland Usage Calendar' and held the technical lead role: it uses satellite data to monitor grass growth and mowing moments. Also product owner for various R&D projects at VAA." },
-            { "nl": "Beespot (2019–2020): voorspelde met satellietdata de aanwezigheid van pollen en nectar als voedselbron voor bijen; uitgenodigd voor een challenge van ESA.", "en": "Beespot (2019–2020): used satellite data to predict the availability of pollen and nectar as a food source for bees; invited to take part in an ESA challenge." }
+            { "nl": "Beespot (2019–2020): voorspelde met satellietdata de aanwezigheid van pollen en nectar als voedselbron voor bijen; uitgenodigd voor een challenge van ESA.", "en": "Beespot (2019–2020): used satellite data to predict the availability of pollen and nectar as a food source for bees; invited to take part in an ESA challenge." },
+            { "nl": "Technieken: Python (rekenmodellen voor de Digitale Graslandgebruikskalender), SQL (via een ORM en eigen SQL-scripts voor performance), JavaScript (React); code review bij elk project.", "en": "Technologies: Python (calculation models for the Digital Grassland Usage Calendar), SQL (via an ORM and custom SQL scripts for performance), JavaScript (React); code review on every project." }
           ]
         },
         {
           "role": "Front-end Developer",
           "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
           "bullets": [
-            { "nl": "Diverse projecten voor klanten in de agrifoodsector. Gespecialiseerd in datavisualisatie, GIS (o.a. geodiensten van PDOK) en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS (including PDOK geo services) and React." }
+            { "nl": "Diverse projecten voor klanten in de agrifoodsector. Gespecialiseerd in datavisualisatie, GIS (o.a. geodiensten van PDOK) en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS (including PDOK geo services) and React." },
+            { "nl": "Technieken: JavaScript (React); code review bij elk project.", "en": "Technologies: JavaScript (React); code review on every project." }
           ]
         }
       ]
