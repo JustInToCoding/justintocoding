@@ -1,7 +1,7 @@
 {
   "meta": {
     "name": "Justin Steenhuis",
-    "title": { "nl": "Freelance Solution Architect · Agrifoodsector", "en": "Freelance Solution Architect · Agri-food" },
+    "title": { "nl": "Freelance Data & Software Engineer · Solution Architect", "en": "Freelance Data & Software Engineer · Solution Architect" },
     "email": "info@justintocoding.com",
     "github": "https://github.com/JustInToCoding",
     "linkedin": "https://www.linkedin.com/in/justin-steenhuis",
@@ -9,13 +9,13 @@
     "siteUrl": "https://www.justintocoding.com",
     "photoAlt": { "nl": "Profielfoto van Justin Steenhuis", "en": "Profile photo of Justin Steenhuis" },
     "description": {
-      "nl": "Freelance Solution Architect met tien jaar ervaring in data, satellietdata, GIS en cloud binnen de agrifoodsector.",
-      "en": "Freelance Solution Architect with ten years of experience in data, satellite data, GIS and cloud in the agri-food sector."
+      "nl": "Freelance data & software engineer en solution architect met tien jaar ervaring in dataplatformen, geo- en satellietdata, API's en cloud binnen de agrifoodsector.",
+      "en": "Freelance data & software engineer and solution architect with ten years of experience in data platforms, geo and satellite data, APIs and cloud in the agri-food sector."
     }
   },
   "profile": {
-    "nl": "Freelance Solution Architect met tien jaar ervaring in de agrifoodsector en een achtergrond als developer. Vertaalt complexe databehoeften en bedrijfsprocessen naar een heldere architectuur en een werkende oplossing: brengt het bestaande landschap in kaart, maakt onderbouwde keuzes in componenten en standaarden, en bewaakt de samenhang terwijl teams bouwen. Ruime ervaring met data-integratie, satellietdata en GIS, en met oplossingen waarin data bij de bron blijft en de eigenaar zeggenschap houdt. Werkt graag op het snijvlak van techniek, organisaties en beleid, en verbindt developers, stakeholders, onderzoekers en publieke partijen.",
-    "en": "Freelance Solution Architect with ten years of experience in the agri-food sector and a background as a developer. Translates complex data needs and business processes into a clear architecture and a working solution: maps the existing landscape, makes well-founded choices in components and standards, and safeguards coherence while teams build. Extensive experience with data integration, satellite data and GIS, and with solutions in which data stays at the source and owners stay in control. Enjoys working where technology, organisations and policy meet, connecting developers, stakeholders, researchers and public bodies."
+    "nl": "Freelance data & software engineer en solution architect met tien jaar ervaring in het bouwen van dataplatformen en data-infrastructuur in de agrifoodsector. Combineert ontwerpen en bouwen: vertaalt een architectuur naar werkende componenten en bewaakt dat het geheel blijft kloppen. Bouwt datapipelines voor geo- en satellietdata (GDAL, PostGIS, Copernicus, STAC, COG), ontsluit data en analyses via API's (Node.js/Express) en werkt cloud-native met Docker, Kubernetes, AWS en Azure. Hands-on in Python, SQL en JavaScript, met code review als vast onderdeel van elk project. Lid van het Data Management Team van ReGeNL, waar datastromen van boeren samenkomen voor onderzoek en begeleiding en data via dashboards terug naar de boer gaat. Ervaring met data-space-architecturen (Hollandse Datalinie, DESA) en kennis van Gaia-X, Pontus-X, ODRL en compute-to-data.",
+    "en": "Freelance data & software engineer and solution architect with ten years of experience building data platforms and data infrastructure in the agri-food sector. Combines design and engineering: turns an architecture into working components and makes sure the whole stays coherent. Builds data pipelines for geo and satellite data (GDAL, PostGIS, Copernicus, STAC, COG), exposes data and analytics through APIs (Node.js/Express) and works cloud-native with Docker, Kubernetes, AWS and Azure. Hands-on in Python, SQL and JavaScript, with code review as a standard part of every project. Member of the ReGeNL Data Management Team, where farm data streams come together for research and advisory work and data flows back to farmers through dashboards. Experience with data space architectures (Hollandse Datalinie, DESA) and knowledge of Gaia-X, Pontus-X, ODRL and compute-to-data."
   },
   "experience": [
     {
@@ -23,13 +23,13 @@
       "location": { "nl": "Wageningen", "en": "Wageningen" },
       "roles": [
         {
-          "role": "Solution Architect (freelance)",
+          "role": "Solution Architect, Data Management Team (freelance)",
           "period": { "nl": "okt 2024 – heden", "en": "Oct 2024 – present" },
           "bullets": [
-            { "nl": "Onderdeel van het Data Management Team van ReGeNL — een Nationaal Groeifonds-programma van Stichting Next Food Collective, in opdracht van het ministerie van LVVN, waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Part of the Data Management Team of ReGeNL — a National Growth Fund programme by Stichting Next Food Collective, commissioned by the Dutch Ministry of Agriculture (LVVN), in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
-            { "nl": "Verantwoordelijk voor het ontwerpen, integreren en ontwikkelen van oplossingen voor alle datagerelateerde vraagstukken, met data-space-principes als uitgangspunt: data blijft bij de bron, de boer houdt zeggenschap en krijgt de eigen data terug.", "en": "Responsible for architecting, integrating and developing solutions for all data-related requirements, based on data space principles: data stays at the source, farmers stay in control and get their data back." },
-            { "nl": "Technieken: Python (geofuncties); code review bij elk project.", "en": "Technologies: Python (geo functions); code review on every project." },
-            { "nl": "Betrokken bij DESA, de verkenning van LVVN naar een federatief data-ecosysteem voor de agrosector: werkte samen met het datamanagementteam de ReGeNL-use cases uit die aansluiten op de DESA-kernservices (deelnemersregister, machtigen, gegevensdelingsovereenkomst, connector).", "en": "Involved in DESA, the Dutch ministry's exploration of a federated data ecosystem for agriculture: co-developed the ReGeNL use cases that build on the DESA core services (participant registry, authorisation, data-sharing agreement, connector)." }
+            { "nl": "Lid van het Data Management Team van ReGeNL — een Nationaal Groeifonds-programma van Stichting Next Food Collective, in opdracht van het ministerie van LVVN, waarin meerdere universiteiten en partners 1.000 boeren begeleiden naar regeneratieve landbouw.", "en": "Member of the Data Management Team of ReGeNL — a National Growth Fund programme by Stichting Next Food Collective, commissioned by the Dutch Ministry of Agriculture (LVVN), in which multiple universities and partners guide 1,000 farmers towards regenerative farming." },
+            { "nl": "Integreert datastromen van boeren uit verschillende bronnen ten behoeve van onderzoek en agrarische begeleiding, en levert data via dashboards terug aan de boer.", "en": "Integrates farm data streams from multiple sources for research and agricultural advisory work, and returns data to farmers through dashboards." },
+            { "nl": "Verkent data spaces als manier om data bij de bron te houden en de boer zeggenschap te geven. Werkte voor DESA (LVVN) mee aan de ReGeNL-use cases op de kernservices deelnemersregister, machtigen, gegevensdelingsovereenkomst en connector, waaronder het machineleesbaar vastleggen van gebruiksvoorwaarden (doelbinding voor AI-gebruik) en logging en auditing van datagebruik.", "en": "Explores data spaces as a way to keep data at the source and keep farmers in control. For DESA (LVVN), co-developed the ReGeNL use cases on the core services participant registry, authorisation, data-sharing agreement and connector, including machine-readable usage conditions (purpose binding for AI use) and logging and auditing of data use." },
+            { "nl": "Technieken: code review bij elk project.", "en": "Technologies: code review on every project." }
           ]
         }
       ]
@@ -39,10 +39,10 @@
       "location": { "nl": "Nederland", "en": "Netherlands" },
       "roles": [
         {
-          "role": "Freelance Solution Architect",
+          "role": "Freelance Data & Software Engineer / Solution Architect",
           "period": { "nl": "sep 2024 – heden", "en": "Sep 2024 – present" },
           "bullets": [
-            { "nl": "Eigen freelance-praktijk: solution architecture, technisch leiderschap en development voor opdrachtgevers in de agrifoodsector, met focus op data spaces en satellietdata.", "en": "Own freelance practice: solution architecture, technical leadership and development for clients in the agri-food sector, focusing on data spaces and satellite data." }
+            { "nl": "Eigen freelance-praktijk: data- en software-engineering en solution architecture voor opdrachtgevers in de agrifoodsector, met focus op geo- en satellietdata en data spaces.", "en": "Own freelance practice: data and software engineering and solution architecture for clients in the agri-food sector, focusing on geo and satellite data and data spaces." }
           ]
         }
       ]
@@ -68,9 +68,11 @@
           "role": "Technical Lead (freelance)",
           "period": { "nl": "nov 2024 – okt 2025", "en": "Nov 2024 – Oct 2025" },
           "bullets": [
-            { "nl": "Ontwierp een satellietdataplatform voor boeren en bouwde het mee; het platform geeft actueel inzicht in gewasgroei, bodemomstandigheden en de prestaties van percelen, op basis van satellietbeelden en geavanceerde analyses.", "en": "Designed and helped build a satellite data platform for farmers that gives up-to-date insight into crop growth, soil conditions and field performance, based on satellite imagery and advanced analytics." },
-            { "nl": "API-first ontworpen, zodat data en analyses als dienst ontsloten worden en naadloos integreren in bestaande klantsystemen. Hands-on met Python, SQL, STAC en Cloud Optimized GeoTIFF (COG).", "en": "Designed API-first, so data and analytics are exposed as services and integrate seamlessly into customers' existing systems. Hands-on with Python, SQL, STAC and Cloud Optimized GeoTIFF (COG)." },
-            { "nl": "Gaf technisch richting aan het team, reviewde code en begeleidde en trainde de developer.", "en": "Provided technical direction to the team, reviewed code, and mentored and trained the developer." }
+            { "nl": "Ontwierp en bouwde mee aan een satellietdataplatform voor boeren dat actueel inzicht geeft in gewasgroei, bodemomstandigheden en de prestaties van percelen.", "en": "Designed and helped build a satellite data platform for farmers that gives up-to-date insight into crop growth, soil conditions and field performance." },
+            { "nl": "Zette datapipelines op die satellietbeelden uit Copernicus Data Space en Sentinel Hub verwerken met GDAL, ogr2ogr en GeoPandas, met opslag in PostGIS, S3 en Azure Blob Storage en verwerking via AWS Lambda. Beelden als Cloud Optimized GeoTIFF (COG), gecatalogiseerd met STAC.", "en": "Set up data pipelines that process satellite imagery from Copernicus Data Space and Sentinel Hub with GDAL, ogr2ogr and GeoPandas, with storage in PostGIS, S3 and Azure Blob Storage and processing via AWS Lambda. Imagery as Cloud Optimized GeoTIFF (COG), catalogued with STAC." },
+            { "nl": "Bouwde API's met Node.js/Express volgens een API-first-aanpak, zodat data en analyses als dienst in bestaande klantsystemen integreren.", "en": "Built APIs with Node.js/Express following an API-first approach, so data and analytics are exposed as services that integrate into customers' existing systems." },
+            { "nl": "Gaf technisch richting aan het team, reviewde code en begeleidde en trainde de developer.", "en": "Provided technical direction to the team, reviewed code, and mentored and trained the developer." },
+            { "nl": "Technieken: Python, SQL (PostGIS), JavaScript (Node.js/Express), AWS (Lambda, S3), Azure Blob Storage; code review bij elk project.", "en": "Technologies: Python, SQL (PostGIS), JavaScript (Node.js/Express), AWS (Lambda, S3), Azure Blob Storage; code review on every project." }
           ]
         }
       ]
@@ -93,9 +95,9 @@
           "role": "Software Architect & Lead Developer",
           "period": { "nl": "jan 2022 – nov 2023", "en": "Jan 2022 – Nov 2023" },
           "bullets": [
-            { "nl": "Software architect en technisch lead voor diverse producten en klanten, full-stack; reviewde front- en back-endcode en coachte developers en stagiairs.", "en": "Software architect and technical lead for various products and clients, full-stack; reviewed front-end and back-end code and coached developers and interns." },
+            { "nl": "Software architect en technisch lead voor diverse producten en klanten; bouwde full-stack mee (front-end en back-end) en coachte developers en stagiairs.", "en": "Software architect and technical lead for various products and clients; built full-stack (front-end and back-end) and coached developers and interns." },
             { "nl": "Product Owner/projectleider voor De Heus: stuurde een offshore ontwikkelteam uit Nepal aan bij het bouwen van de Poultry Coach-app voor pluimveehouders in Afrika en leidde een design sprint om het project te starten.", "en": "Product Owner/project lead for De Heus: managed an offshore development team from Nepal building the Poultry Coach app for poultry farmers in Africa, and led a design sprint to kick-start the project." },
-            { "nl": "Technieken: JavaScript (React); code review van front- en back-endcode bij elk project.", "en": "Technologies: JavaScript (React); front-end and back-end code review on every project." }
+            { "nl": "Technieken: JavaScript (React, Node.js/Express-API's), SQL (PostGIS), Docker, Kubernetes, Azure; code review van front- en back-endcode bij elk project.", "en": "Technologies: JavaScript (React, Node.js/Express APIs), SQL (PostGIS), Docker, Kubernetes, Azure; front-end and back-end code review on every project." }
           ]
         },
         {
@@ -103,16 +105,18 @@
           "period": { "nl": "jan 2020 – dec 2021", "en": "Jan 2020 – Dec 2021" },
           "bullets": [
             { "nl": "Initieerde de 'Digitale Graslandgebruikskalender' en had er de technische leadrol: monitort met satellietdata grasgroei en maaimomenten. Daarnaast product owner voor diverse R&D-projecten bij VAA.", "en": "Initiated the 'Digital Grassland Usage Calendar' and held the technical lead role: it uses satellite data to monitor grass growth and mowing moments. Also product owner for various R&D projects at VAA." },
+            { "nl": "Bouwde datapipelines voor geodata: percelen uit Mijn Percelen van RVO en bodemmonsters van Eurofins, verwerkt met ogr2ogr en opgeslagen in PostGIS. Ontwikkelde mee aan het Percelen Volg Systeem.", "en": "Built data pipelines for geodata: fields from RVO's Mijn Percelen and soil samples from Eurofins, processed with ogr2ogr and stored in PostGIS. Co-developed the Percelen Volg Systeem (field tracking system)." },
             { "nl": "Beespot (2019–2020): voorspelde met satellietdata de aanwezigheid van pollen en nectar als voedselbron voor bijen; uitgenodigd voor een challenge van ESA.", "en": "Beespot (2019–2020): used satellite data to predict the availability of pollen and nectar as a food source for bees; invited to take part in an ESA challenge." },
-            { "nl": "Technieken: Python (rekenmodellen voor de Digitale Graslandgebruikskalender), SQL (via een ORM en eigen SQL-scripts voor performance), JavaScript (React); code review bij elk project.", "en": "Technologies: Python (calculation models for the Digital Grassland Usage Calendar), SQL (via an ORM and custom SQL scripts for performance), JavaScript (React); code review on every project." }
+            { "nl": "Technieken: Python (rekenmodellen voor de Digitale Graslandgebruikskalender), SQL (ORM, eigen SQL-scripts voor performance, PostGIS), JavaScript (React, Node.js/Express-API's, OpenLayers, Leaflet, Turf.js, proj4js), GeoServer, Docker, Kubernetes, Azure; code review bij elk project.", "en": "Technologies: Python (calculation models for the Digital Grassland Usage Calendar), SQL (ORM, custom SQL scripts for performance, PostGIS), JavaScript (React, Node.js/Express APIs, OpenLayers, Leaflet, Turf.js, proj4js), GeoServer, Docker, Kubernetes, Azure; code review on every project." }
           ]
         },
         {
           "role": "Front-end Developer",
           "period": { "nl": "sep 2016 – dec 2019", "en": "Sep 2016 – Dec 2019" },
           "bullets": [
-            { "nl": "Diverse projecten voor klanten in de agrifoodsector. Gespecialiseerd in datavisualisatie, GIS (o.a. geodiensten van PDOK) en React.", "en": "Various projects for clients in the agri-food sector. Specialised in data visualisation, GIS (including PDOK geo services) and React." },
-            { "nl": "Technieken: JavaScript (React), SQL (via een ORM en eigen SQL-scripts voor performance, o.a. voor het e-commerceplatform van De Heus en de KringloopWijzer); code review bij elk project.", "en": "Technologies: JavaScript (React), SQL (via an ORM and custom SQL scripts for performance, including for the De Heus e-commerce platform and the KringloopWijzer); code review on every project." }
+            { "nl": "Ontwikkelde front- en back-end aan BizView, het modulaire dataplatform van VAA voor benchmarking: van dataverzameling en validatie tot analyse, visualisatie en rapportage.", "en": "Developed front-end and back-end for BizView, VAA's modular data platform for benchmarking: from data collection and validation to analysis, visualisation and reporting." },
+            { "nl": "Werkte aan de KringloopWijzer en het e-commerceplatform van De Heus. Gespecialiseerd in datavisualisatie, GIS (o.a. geodiensten van PDOK) en React.", "en": "Worked on the KringloopWijzer and the De Heus e-commerce platform. Specialised in data visualisation, GIS (including PDOK geo services) and React." },
+            { "nl": "Technieken: JavaScript (React, OpenLayers, Leaflet, Turf.js, proj4js), SQL (ORM, eigen SQL-scripts voor performance, PostGIS), GeoServer; code review bij elk project.", "en": "Technologies: JavaScript (React, OpenLayers, Leaflet, Turf.js, proj4js), SQL (ORM, custom SQL scripts for performance, PostGIS), GeoServer; code review on every project." }
           ]
         }
       ]
@@ -160,11 +164,13 @@
     }
   ],
   "skills": [
-    { "group": { "nl": "Architectuur", "en": "Architecture" }, "items": ["Solution Architecture", "Data integration", "Data Spaces (iSHARE, Solid)", "API-first", "Technical Leadership", "Code review"] },
-    { "group": { "nl": "Data & geo", "en": "Data & geo" }, "items": ["Python", "SQL", "GIS", "OGC APIs (PDOK)", "STAC & COG", "Remote sensing", "Data visualisation"] },
-    { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["JavaScript", "React", "HTML & CSS"] },
-    { "group": { "nl": "Back-end & Cloud", "en": "Back-end & Cloud" }, "items": ["Node.js", "AWS", "Azure"] },
-    { "group": { "nl": "Rollen & aanpak", "en": "Roles & approach" }, "items": ["Product Ownership", "Business Consultancy", "Design Sprints", "Coaching & mentoring"] }
+    { "group": { "nl": "Data engineering", "en": "Data engineering" }, "items": ["Python", "SQL", "PostGIS", "GDAL / ogr2ogr", "GeoPandas", "Datapipelines"] },
+    { "group": { "nl": "API's & back-end", "en": "APIs & back-end" }, "items": ["Node.js", "Express", "REST APIs", "API-first"] },
+    { "group": { "nl": "Geo & aardobservatie", "en": "Geo & earth observation" }, "items": ["Copernicus Data Space", "Sentinel Hub", "STAC", "COG", "OGC APIs (PDOK)", "GeoServer", "OpenLayers", "Leaflet", "Turf.js", "proj4js"] },
+    { "group": { "nl": "Cloud & containers", "en": "Cloud & containers" }, "items": ["AWS (Lambda, S3)", "Azure (Blob Storage)", "Docker", "Kubernetes"] },
+    { "group": { "nl": "Front-end", "en": "Front-end" }, "items": ["JavaScript", "React", "Data visualisation"] },
+    { "group": { "nl": "Data spaces (kennis)", "en": "Data spaces (knowledge)" }, "items": ["Gaia-X", "Pontus-X", "DSSC Blueprint", "iSHARE", "Solid", "ODRL", "Compute-to-Data", "DCAT-AP-NL"] },
+    { "group": { "nl": "Werkwijze", "en": "Ways of working" }, "items": ["Code review", "Solution Architecture", "Technical Leadership", "Product Ownership", "Coaching & mentoring"] }
   ],
   "interests": ["Open Source", "Data Spaces", { "nl": "Hackathons (FarmHack)", "en": "Hackathons (FarmHack)" }, "Self-hosting", { "nl": "Agrarisch domein", "en": "Agricultural domain" }, "Remote sensing"],
   "projects": [],
